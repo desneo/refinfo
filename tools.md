@@ -34,21 +34,21 @@
 
 #vim/gvim（安装目录下vimrc）
 ##打开utf-8乱码
-"显示行号
-set nu
-"自动折行
-set wrap
-"tab间距
-set tabstop=4
-set softtabstop=4
-"文件编码，打开utf-8乱码问题
-set encoding=utf-8
-"终端编码需与当前主机保持一致，否则展示乱码
-set termencoding=gbk
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,gbk,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-##gvim中文菜单乱码乱
-"gvim解决菜单乱码  
+"显示行号  
+set nu  
+"自动折行  
+set wrap  
+"tab间距  
+set tabstop=4  
+set softtabstop=4  
+"文件编码，打开utf-8乱码问题  
+set encoding=utf-8  
+"终端编码需与当前主机保持一致，否则展示乱码  
+set termencoding=gbk  
+set fileencoding=utf-8  
+set fileencodings=ucs-bom,utf-8,gbk,cp936,gb18030,big5,euc-jp,euc-kr,latin  
+##gvim中文菜单乱码乱  
+"gvim解决菜单乱码   
 source $VIMRUNTIME/delmenu.vim  
 source $VIMRUNTIME/menu.vim  
 "gvim解决consle输出乱码  
