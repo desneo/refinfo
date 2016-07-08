@@ -31,7 +31,8 @@ set tabstop=4
 set softtabstop=4
 "文件编码，打开utf-8乱码问题
 set encoding=utf-8
-set termencoding=utf-8
+"终端编码需与当前主机保持一致，否则展示乱码
+set termencoding=gbk
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 ##gvim中文菜单乱码乱
