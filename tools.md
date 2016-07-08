@@ -20,7 +20,7 @@
 
 
 
-#vi/gvim（安装目录下vimrc）
+#vim/gvim（安装目录下vimrc）
 ##打开utf-8乱码
 "显示行号
 set nu
