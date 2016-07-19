@@ -18,7 +18,10 @@
     Properties prop = new Properties(); 
     FileInputStream fis = new FileInputStream("prop.properties");
     prop.load(fis); 
- 
+##2.3 List
+###2.3.1 ArrayList 常用，查询快，增删慢，非线程安全（底层数组）  
+###2.3.2 LinkedList 查询慢，增删快，非线程安全（底层链表）  
+###2.3.3 Vector 线程安全，效率低，（底层数组）  
 ##2.4 集合转换  
 Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
 List-->Set: Set<String> listSet = new HashSet<String>(list);  
