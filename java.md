@@ -33,7 +33,15 @@
     Map-->Set:  
         Set<String> mapValuesSet = new HashSet<String>(map.values()); 
         List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
-
+  
+#3.Java其它  
+##3.1try-with-resource 资源自动关闭  
+    注：1）try后面()中打开的资源会在{}代码执行完成/异常后自动关闭  
+        2) 可结合catch、finally使用，在资源关闭后执行
+    try (
+      java.util.zip.ZipFile zf = new java.util.zip.ZipFile(zipFileName);
+      java.io.BufferedWriter writer = java.nio.file.Files.newBufferedWriter(outputFilePath, charset)
+    ) {}
 
 #eclipse快捷键  
     Alt+Shift+B 打开面包屑视图，展示当天文件的路径（重要）  
