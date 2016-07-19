@@ -23,15 +23,15 @@
 ###2.3.2 LinkedList 查询慢，增删快，非线程安全（底层链表）  
 ###2.3.3 Vector 线程安全，效率低，（底层数组）  
 ##2.4 集合转换  
-Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
-List-->Set: Set<String> listSet = new HashSet<String>(list);  
-Set-->Array: set.toArray(arr);  
-Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
-List-->Array: list.toArray();  
-Array-->List: Arrays.asList(array);  
-Map-->Set:  
-    Set<String> mapValuesSet = new HashSet<String>(map.values()); 
-    List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
+    Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
+    List-->Set: Set<String> listSet = new HashSet<String>(list);  
+    Set-->Array: set.toArray(arr);  
+    Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
+    List-->Array: list.toArray();  
+    Array-->List: Arrays.asList(array);  
+    Map-->Set:  
+        Set<String> mapValuesSet = new HashSet<String>(map.values()); 
+        List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
 
 
 #eclipse快捷键  
