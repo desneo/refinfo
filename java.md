@@ -1,3 +1,13 @@
+#2.Java集合  
+##2.1 Set  
+###2.1.1 HashSet 常用，可null   
+  源码中使用HashMap实现（只使用Key部分功能）  
+###2.1.2 LinkedHashSet 按插入顺序迭代  
+  节点上维护着双重列表，即可知道插入顺序  
+###2.1.3 TreeSet 按指定方式排序  
+  可用Comparator指定排序方式，  
+  
+  
 
 
 #eclipse快捷键  
