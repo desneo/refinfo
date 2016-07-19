@@ -3,7 +3,7 @@
 #eclipse快捷键  
 Alt+Shift+B 打开面包屑视图，展示当天文件的路径（重要）  
 Ctrl+Shift+G  展示调用当前方法的所有类（鼠标定位到这个方法） 
-F4  当前接口的所有实现类    
+Ctrl+T / F4  当前接口的所有实现类    
 Alt+Shift+R  统一修改参数名字/类变量、 方法变量等  
 Ctrl+E/Ctrl+F6 展示当前已打开的所有文件  
 Alt+Shift+->  范围选取  
