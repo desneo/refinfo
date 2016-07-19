@@ -7,7 +7,11 @@
   节点上维护着双重列表，即可知道插入顺序  
 ###2.1.3 TreeSet 按指定方式排序  
   可用Comparator指定排序方式，  
-  
+##2.4 转换  
+set-->list：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
+list-->set: Set<String> listSet = new HashSet<String>(list);  
+set-->array: set.toArray(arr);  
+array-->set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
   
 
 
