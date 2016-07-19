@@ -4,9 +4,9 @@
     源码中使用HashMap实现（只使用Key部分功能）  
     HashSet<BigDecimal> ss = new HashSet<>();ss.add(new BigDecimal(123));  
 ###2.1.2 LinkedHashSet 按插入顺序迭代  
-  节点上维护着双重列表，即可知道插入顺序  
+    节点上维护着双重列表，即可知道插入顺序  
 ###2.1.3 TreeSet 按指定方式排序  
-  可用Comparator指定排序方式，  
+    可用Comparator指定排序方式，  
 ##2.2 MAp  
 ###2.2.1 HashMap 常用  
     HashMap<String , Double> map = new HashMap<String , Double>(); 
@@ -57,9 +57,9 @@
 
 
 #远程debug  
-下一个断点: F8  单步： F6	  进入： F5  
-查看变量：　debug视图--》 Variables --> 变量名--》voProperties --> properties -->table即可  
+    下一个断点: F8  单步： F6	  进入： F5  
+    查看变量：　debug视图--》 Variables --> 变量名--》voProperties --> properties -->table即可  
 
---》打开远程debug： debug图标 --> debug configuration -->  Remote java Application --》 配置地址端口--》 勾选"Allow termination of remote VM"
---》 查看debug远程端口：  /home/business/opt/container/bin/catalina.sh -->  搜索 Xdebug --》（常用:8090）
--->打开debug视图 --》 右上角 open persperctive --> debug
+    --》打开远程debug： debug图标 --> debug configuration -->  Remote java Application --》 配置地址端口--》 勾选"Allow termination of remote VM"
+    --》 查看debug远程端口：  /home/business/opt/container/bin/catalina.sh -->  搜索 Xdebug --》（常用:8090）
+    -->打开debug视图 --》 右上角 open persperctive --> debug
