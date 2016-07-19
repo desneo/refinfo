@@ -25,9 +25,10 @@ List-->Set: Set<String> listSet = new HashSet<String>(list);
 Set-->Array: set.toArray(arr);  
 Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
 List-->Array: list.toArray();  
-Array-->List: Arrays.asList(array); 
+Array-->List: Arrays.asList(array);  
 Map-->Set:  
-    Set<String> mapValuesSet = new HashSet<String>(map.values()); / List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
+    Set<String> mapValuesSet = new HashSet<String>(map.values()); 
+    List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
 
 
 #eclipse快捷键  
