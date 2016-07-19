@@ -2,14 +2,15 @@
 ##2.1 Set  
 ###2.1.1 HashSet 常用，可null   
     源码中使用HashMap实现（只使用Key部分功能）  
-    HashSet<BigDecimal> ss = new HashSet<>();ss.add(new BigDecimal(123));  
+    HashSet<BigDecimal> ss = new HashSet<>();  
+    ss.add(new BigDecimal(123));  
 ###2.1.2 LinkedHashSet 按插入顺序迭代  
     节点上维护着双重列表，即可知道插入顺序  
 ###2.1.3 TreeSet 按指定方式排序  
     可用Comparator指定排序方式，  
 ##2.2 MAp  
 ###2.2.1 HashMap 常用  
-    HashMap<String , Double> map = new HashMap<String , Double>(); 
+    HashMap<String , Double> map = new HashMap<>(); 
     map.put("语文" , 80.0);
 ###2.2.2 HashTable 线程安全  
 ###2.2.3 LinkedHashMap按插入顺序  
