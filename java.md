@@ -78,8 +78,17 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
     Files.exist(path);  //是否存在
     Files.readAttributes(path, "*") //文件属性
 ```
-
-
+**读取文件**
+```java
+List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+byte[] bytes = Files.readAllBytes(path);
+```
+**写入文件**
+```java
+try(BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8, StandardOpenOption.WRITE)){
+    writer.write("Hello World!");
+}
+```
 
 
 
