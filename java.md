@@ -89,7 +89,13 @@ try(BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8
     writer.write("Hello World!");
 }
 ```
-
+**文件寻址定位**
+```java
+//读取文件最后的100个字符
+ByteBuffer buffer = ByteBuffer.allocate(100);
+FileChannel channel = FileChannel.open(path, StandardOpenOption.READ);
+channel.read(buffer, channel.size()-100);
+```
 
 
 #20.Java其它  
