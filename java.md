@@ -1,25 +1,34 @@
 #2.Java集合  
 ##2.1 Set  
-**HashSet 常用，可null**   
-    源码中使用HashMap实现（只使用Key部分功能）  
-    HashSet<BigDecimal> ss = new HashSet<>();  
-    ss.add(new BigDecimal(123));  
+**HashSet 常用，可null**
+```
+	源码中使用HashMap实现（只使用Key部分功能）  
+	HashSet<BigDecimal> ss = new HashSet<>();  
+	ss.add(new BigDecimal(123));  
+```
 **LinkedHashSet 按插入顺序迭代**  
-    节点上维护着双重列表，即可知道插入顺序  
-**TreeSet 按指定方式排序**  
-    可用Comparator指定排序方式，  
+```
+	节点上维护着双重列表，即可知道插入顺序  
+```
+**TreeSet 按指定方式排序** 
+```
+	可用Comparator指定排序方式，  
+```
 ##2.2 MAp  
-**HashMap 常用**  
-    HashMap<String , Double> map = new HashMap<>(); 
-    map.put("语文" , 80.0);
+**HashMap 常用**
+```
+	HashMap<String , Double> map = new HashMap<>(); 
+	map.put("语文" , 80.0);
+```
 **HashTable 线程安全**  
 **LinkedHashMap按插入顺序**  
 **TreeMap 可自定义排序**  
-**2.2.5 Properties *.properties文件**  
-    Properties prop = new Properties(); 
-    FileInputStream fis = new FileInputStream("prop.properties");
-    prop.load(fis); 
-    
+**Properties *.properties文件**  
+```
+	Properties prop = new Properties(); 
+	FileInputStream fis = new FileInputStream("prop.properties");
+	prop.load(fis); 
+ ``` 
 ##2.3 List
 **ArrayList 常用，查询快，增删慢，非线程安全（底层数组）**  
 **LinkedList 查询慢，增删快，非线程安全（底层链表）**  
