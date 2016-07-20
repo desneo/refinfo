@@ -54,7 +54,20 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
 ```
 **遍历目录树**
 ```java
-
+    public static void main(String[] args) throws IOException
+    {
+        Path path = Paths.get("F:/project/C10/20160704-");
+        Files.walkFileTree(path, new findPropertyVisitor());
+    }
+    private static class findPropertyVisitor extends SimpleFileVisitor<Path>{
+        @Override
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attributes){
+            if(file.toString().endsWith(".properties")){
+                System.out.println(file.getFileName());
+            }
+            return FileVisitResult.CONTINUE;
+        }
+    }
 ```
 ##3.3 File 操作文件
 ```java
