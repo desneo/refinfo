@@ -19,10 +19,12 @@
     Properties prop = new Properties(); 
     FileInputStream fis = new FileInputStream("prop.properties");
     prop.load(fis); 
+    
 ##2.3 List
 ###2.3.1 ArrayList 常用，查询快，增删慢，非线程安全（底层数组）  
 ###2.3.2 LinkedList 查询慢，增删快，非线程安全（底层链表）  
 ###2.3.3 Vector 线程安全，效率低，（底层数组）  
+
 ##2.4 集合转换  
     Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
     List-->Set: Set<String> listSet = new HashSet<String>(list);  
@@ -39,6 +41,34 @@
     注：1）Path可独立存在，只有在读取或写入时才会异常
         2) 去掉./..-->path.normalize() ,快捷方式的真实地址:path.toRealPath()
     Path listing = Paths.get("C:/Users/z00316474/Desktop");
+##3.2 处理目录和目录树
+**目录中查找文件**
+```java
+try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
+{
+	for (Path path : stream)
+	{
+		System.out.println(path.getFileName());
+	}
+}
+```
+**遍历目录树**
+```java
+
+```
+##3.3 File 操作文件
+```java
+    Files.createFile(path);
+    Files.delete(path);
+    Files.copy(source, target [, REPLACE_EXISTING]);    //可设置属性，如覆盖已有文件
+    Files.move(source, target);
+    Files.exist(path);  //是否存在
+    Files.readAttributes(path, "*") //文件属性
+```
+
+
+
+
 
 #20.Java其它  
 ##20.1try-with-resource 资源自动关闭,实现了Closeable接口的类    
