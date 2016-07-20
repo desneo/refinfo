@@ -1,29 +1,29 @@
 #2.Java集合  
 ##2.1 Set  
-###2.1.1 HashSet 常用，可null   
+**HashSet 常用，可null**   
     源码中使用HashMap实现（只使用Key部分功能）  
     HashSet<BigDecimal> ss = new HashSet<>();  
     ss.add(new BigDecimal(123));  
-###2.1.2 LinkedHashSet 按插入顺序迭代  
+**LinkedHashSet 按插入顺序迭代**  
     节点上维护着双重列表，即可知道插入顺序  
-###2.1.3 TreeSet 按指定方式排序  
+**TreeSet 按指定方式排序**  
     可用Comparator指定排序方式，  
 ##2.2 MAp  
-###2.2.1 HashMap 常用  
+**HashMap 常用**  
     HashMap<String , Double> map = new HashMap<>(); 
     map.put("语文" , 80.0);
-###2.2.2 HashTable 线程安全  
-###2.2.3 LinkedHashMap按插入顺序  
-###2.2.4 TreeMap 可自定义排序  
-###2.2.5 Properties *.properties文件  
+**HashTable 线程安全**  
+**LinkedHashMap按插入顺序**  
+**TreeMap 可自定义排序**  
+**2.2.5 Properties *.properties文件**  
     Properties prop = new Properties(); 
     FileInputStream fis = new FileInputStream("prop.properties");
     prop.load(fis); 
     
 ##2.3 List
-###2.3.1 ArrayList 常用，查询快，增删慢，非线程安全（底层数组）  
-###2.3.2 LinkedList 查询慢，增删快，非线程安全（底层链表）  
-###2.3.3 Vector 线程安全，效率低，（底层数组）  
+**ArrayList 常用，查询快，增删慢，非线程安全（底层数组）**  
+**LinkedList 查询慢，增删快，非线程安全（底层链表）**  
+**Vector 线程安全，效率低，（底层数组）**  
 
 ##2.4 集合转换  
     Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
