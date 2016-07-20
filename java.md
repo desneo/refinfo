@@ -69,7 +69,7 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
         }
     }
 ```
-##3.3 File 操作文件
+##3.3 Files 操作文件
 ```java
     Files.createFile(path);
     Files.delete(path);
