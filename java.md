@@ -96,6 +96,35 @@ ByteBuffer buffer = ByteBuffer.allocate(100);
 FileChannel channel = FileChannel.open(path, StandardOpenOption.READ);
 channel.read(buffer, channel.size()-100);
 ```
+##3.4 异步I/O
+**回调式**
+```java
+//读取文件最后的100个字符
+ByteBuffer buffer = ByteBuffer.allocate(1000);
+//异步方式打开文件
+AsynchronousFileChannel channel = AsynchronousFileChannel.open(path);
+//读取文件
+channel.read(buffer, 0, buffer,
+        new CompletionHandler<Integer, ByteBuffer>()
+        {
+
+            @Override
+            //读取完成时回调方法
+            public void completed(Integer paramV, ByteBuffer paramA)
+            {
+                
+            }
+
+            @Override
+            public void failed(Throwable paramThrowable,
+                    ByteBuffer paramA)
+            {
+            }
+        });
+```
+
+
+##3.10 文件修改通知 WatchService
 
 
 #20.Java其它  
