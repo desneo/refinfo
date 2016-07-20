@@ -52,7 +52,7 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
 	}
 }
 ```
-**遍历目录树**
+**遍历目录树-重写visitFile即可**
 ```java
     public static void main(String[] args) throws IOException
     {
