@@ -33,9 +33,15 @@
     Map-->Set:  
         Set<String> mapValuesSet = new HashSet<String>(map.values()); 
         List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
-  
-#3.Java其它  
-##3.1try-with-resource 资源自动关闭,实现了Closeable接口的类    
+
+#3.Java I/O（SE7）
+##3.1 Path 位置/路径
+    注：1）Path可独立存在，只有在读取或写入时才会异常
+        2) 去掉./..-->path.normalize() ,快捷方式的真实地址:path.toRealPath()
+    Path listing = Paths.get("C:/Users/z00316474/Desktop");
+
+#20.Java其它  
+##20.1try-with-resource 资源自动关闭,实现了Closeable接口的类    
     注：1）try后面()中打开的资源会在{}代码执行完成/异常后自动关闭  
         2) 可结合catch、finally使用，在资源关闭后执行
     try (
