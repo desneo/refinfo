@@ -135,6 +135,12 @@ channel.read(buffer, 0, buffer,
 
 ##3.10 文件修改通知 WatchService
 
+# 7.Java反射
+```
+  1) Hibernate中，将select返回的结果封装成对象返回
+  2）
+```
+
 
 #20.Java其它  
 ##20.1try-with-resource 资源自动关闭,实现了Closeable接口的类    
