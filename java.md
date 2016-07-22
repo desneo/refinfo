@@ -175,9 +175,9 @@ channel.read(buffer, 0, buffer,
 	1)[关闭变量名后自动补全类型字符](http://www.itnose.net/detail/6143864.html)  
 	2)Ctrl+S时自动格式化代码，删除unuse的包:  
 		windows->preference->java/Editor/Save action->勾选Format source Code, Organize import  
-	3)背景颜色
-		代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205
-		package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205
+	3)背景颜色  
+		代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
+		package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
 
 
 
