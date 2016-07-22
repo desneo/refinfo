@@ -181,6 +181,7 @@ eclispe各种视图 -->Window-->Showview-->Other
 3)背景颜色  
 	代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
 	package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
+	关键字颜色：[方案2](http://blog.csdn.net/etjnety/article/details/7846703/)  
 ```
 
 
