@@ -152,33 +152,36 @@ channel.read(buffer, 0, buffer,
     ) {}
 
 #eclipse
-**快捷键**  
-    Alt+Shift+B 打开面包屑视图，展示当天文件的路径（重要）  
-    Ctrl+Shift+G  展示调用当前方法的所有类（鼠标定位到这个方法） 
-    Ctrl+T / F4  当前接口的所有实现类
-    Ctrl+Shift+O 删除unuse的包
-    Alt+Shift+R  统一修改参数名字/类变量、 方法变量等  
-    Ctrl+E/Ctrl+F6 展示当前已打开的所有文件  
-    Alt+Shift+->  范围选取  
-    Ctrl+Shift+P  跳到对应的大括号处  
-    Alt+Shift+M   抽取子方法（先选中代码块)  
-    Ctrl+Shift+Y/X  选中字符转大小写  
-    Ctrl+K/Ctrl+Shift+K 向下/向上查找  
-    Ctrl+L  跳转指定行  
-    Ctrl+T 搜索class  
-    Ctrl+R 搜索java文件  
-    Ctrl+D  删除当前行  
-    Ctrl+o  当前文件的属性和方法  
-    Ctrl+H  搜索  
-    eclispe各种视图 -->Window-->Showview-->Other  
-**配置**  
-	1)[关闭变量名后自动补全类型字符](http://www.itnose.net/detail/6143864.html)  
-	2)Ctrl+S时自动格式化代码，删除unuse的包:  
-		windows->preference->java/Editor/Save action->勾选Format source Code, Organize import  
-	3)背景颜色  
-		代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
-		package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
-
+**快捷键** 
+```
+Alt+Shift+B 打开面包屑视图，展示当天文件的路径（重要）  
+Ctrl+Shift+G  展示调用当前方法的所有类（鼠标定位到这个方法） 
+Ctrl+T / F4  当前接口的所有实现类
+Ctrl+Shift+O 删除unuse的包
+Alt+Shift+R  统一修改参数名字/类变量、 方法变量等  
+Ctrl+E/Ctrl+F6 展示当前已打开的所有文件  
+Alt+Shift+->  范围选取  
+Ctrl+Shift+P  跳到对应的大括号处  
+Alt+Shift+M   抽取子方法（先选中代码块)  
+Ctrl+Shift+Y/X  选中字符转大小写  
+Ctrl+K/Ctrl+Shift+K 向下/向上查找  
+Ctrl+L  跳转指定行  
+Ctrl+T 搜索class  
+Ctrl+R 搜索java文件  
+Ctrl+D  删除当前行  
+Ctrl+o  当前文件的属性和方法  
+Ctrl+H  搜索  
+eclispe各种视图 -->Window-->Showview-->Other  
+``` 
+**配置** 
+```
+1)[关闭变量名后自动补全类型字符](http://www.itnose.net/detail/6143864.html)  
+2)Ctrl+S时自动格式化代码，删除unuse的包:  
+	windows->preference->java/Editor/Save action->勾选Format source Code, Organize import  
+3)背景颜色  
+	代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
+	package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
+```
 
 
 
