@@ -177,6 +177,10 @@ channel.read(buffer, 0, buffer,
         endDate = Date.valueOf("1964");
      }
 ```
+**this**
+```
+1)指当前对象自己
+```
 
 **泛型**
 ```java
