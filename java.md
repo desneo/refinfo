@@ -143,7 +143,12 @@ channel.read(buffer, 0, buffer,
 
 
 #20.Java其它  
-##20.1 try-with-resource 资源自动关闭,实现了Closeable接口的类    
+##20.1 java查看源码  
+```
+    手动: 下载*.tar.gz的jdk包--src.zip(源码，*.exe中无此文件)-->欲附加源码的jar，右键，properties-->External File.. ,src.zip  
+    IDE自动下载(maven): window-->preference-->maven-->勾选，download  sources / javaDoc  
+```
+##20.3 try-with-resource 资源自动关闭,实现了Closeable接口的类    
     注：1）try后面()中打开的资源会在{}代码执行完成/异常后自动关闭  
         2) 可结合catch、finally使用，在资源关闭后执行
     try (
