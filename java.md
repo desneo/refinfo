@@ -150,9 +150,14 @@ channel.read(buffer, 0, buffer,
 ```
 **interface**
 ```
-  1)实现多重继承 
-  2)方法都是public(可不写)，只需定义返回值和名字，不能有实现
-  3)属性默认是public static final(可不写)
+  1)实现多重继承, public interface Tinterface 
+  2)方法都是public(可不写，默认)，只需定义返回值和名字，不能有实现
+  3)属性默认是public static final(可不写，默认)
+```
+**abstract**
+```
+  1)修饰class，可无抽象方法。public abstract class AbstractList<E>
+  2)修饰方法，public abstract void sleep(); //子类中必须实现
 ```
 
 
