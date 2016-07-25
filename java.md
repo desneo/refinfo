@@ -215,6 +215,14 @@ System.out.println(str.getX());
 ```
 
 #20.Java其它  
+## 20.0 java配置
+```
+1)安装后， java -version有值则安装成功
+2)环境变量-->系统变量-->新建JAVA_HOME，值C:\my-program\java (安装路径)
+	  -->系统变量-->Path中添加 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+	  -->系统变量-->CLASSPATH（无则新建）中添加 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
+	  -->若成功，则javac有输出值
+```
 ##20.1 java查看源码  
 ```
     手动: 下载*.tar.gz的jdk包--src.zip(源码，*.exe中无此文件)-->欲附加源码的jar，右键，properties-->External File.. ,src.zip  
