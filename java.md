@@ -142,7 +142,12 @@ channel.read(buffer, 0, buffer,
   1) Hibernate中，将select返回的结果封装成对象返回
   2）
 ```
-
+# 19. Java关键字
+## 19.1 extends和implements
+```
+  extends继承普通class或abstract(抽象)类（java单继承）
+  implements多继承能力，实现interface(接口)。 注： abstract implements interface  
+```
 
 #20.Java其它  
 ##20.1 java查看源码  
