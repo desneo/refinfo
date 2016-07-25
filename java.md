@@ -176,7 +176,38 @@ channel.read(buffer, 0, buffer,
         startDate = Date.valueOf("1946");
         endDate = Date.valueOf("1964");
      }
-  
+```
+
+**泛型**
+```java
+1)泛型必须是对象，不能是简单类型(int float)
+2)类型参数可以多个，<T extends SomeClass & interface1 & interface2 & interface3>  //仍保持单继承的规则
+3)限制类型，可使用extends， 如<T extends superclass>
+4)参数类型可通配符类型，Class<?> classType = Class.forName("java.lang.String")
+public class ObjectFoo<T>
+{
+    private T x;
+    
+    public ObjectFoo(T x)
+    {
+        this.x = x;
+    }
+    
+    public T getX()
+    {
+        return x;
+    }
+    
+    public void setX(T x)
+    {
+        this.x = x;
+    }
+}
+ObjectFoo<Integer> in = new ObjectFoo<Integer>(123);
+System.out.println(in.getX());
+
+ObjectFoo<String> str = new ObjectFoo<String>("asdasd");
+System.out.println(str.getX());
 ```
 
 #20.Java其它  
