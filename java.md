@@ -159,6 +159,12 @@ channel.read(buffer, 0, buffer,
   1)修饰class，可无抽象方法。public abstract class AbstractList<E>
   2)修饰方法，public abstract void sleep(); //子类中必须实现
 ```
+**final**
+```
+  值不可改变
+  1)final int i=100 , i值不能改变
+  2)inal File f=new File("c:\\test.txt"); //f不能重新赋值，但f.xx可以
+```
 
 
 #20.Java其它  
