@@ -163,9 +163,21 @@ channel.read(buffer, 0, buffer,
 ```
   值不可改变
   1)final int i=100 , i值不能改变
-  2)inal File f=new File("c:\\test.txt"); //f不能重新赋值，但f.xx可以
+  2)final File f=new File("c:\\test.txt"); //f不能重新赋值，但f.xx可以
 ```
-
+**static**
+```
+  不需new对象即可调用到 静态方法/变量
+  1)static方法-->  public static void print()
+  2)static变量--> 静态变量为所有对象共享，内存中只一个副本，当且仅当类第一次加载时被初始化一次
+  3)static代码块--> 可任何位置，形成静态代码块优化性能，类初次加载时会按照顺序执行static代码块，且只执行一次
+     private static Date startDate,endDate;
+     static{
+        startDate = Date.valueOf("1946");
+        endDate = Date.valueOf("1964");
+     }
+  
+```
 
 #20.Java其它  
 ##20.1 java查看源码  
