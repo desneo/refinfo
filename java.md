@@ -89,8 +89,10 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
 ```
 **读取文件**
 ```java
+java7:
 List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
-byte[] bytes = Files.readAllBytes(path);
+byte[] bytes = Files.readAllBytes(path);  
+java8: Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小  
 ```
 **写入文件**
 ```java
