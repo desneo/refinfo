@@ -218,10 +218,11 @@ System.out.println(str.getX());
 ## 20.0 java配置
 ```
 1)安装后， java -version有值则安装成功
-2)环境变量-->系统变量-->新建JAVA_HOME，值C:\my-program\java (安装路径)
+2)环境变量-->系统变量-->新建JAVA_HOME，值C:\my-program\java (安装路径)	//windows环境变量key不区分大小写
 	  -->系统变量-->Path中添加 %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
 	  -->系统变量-->CLASSPATH（无则新建）中添加 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
 	  -->若成功，则javac有输出值
+3) 注：若javac还是无法执行，检查bin目录下是否有javac.exe,否则重装
 ```
 ## 20.1 java查看源码  
 ```
@@ -238,7 +239,7 @@ System.out.println(str.getX());
 ## 20.5 解析html jsoup  
 ## 20.6 java初始化
 ```java
-1) int[] a = { 5, 4, 2, 4, 9, 1 };
+1) java数组： int[] a = { 5, 4, 2, 4, 9, 1 };
 2) class中的int默认值0，对象默认值null
 3) 初始化顺序，先静态对象，再非静态对象
 ```
