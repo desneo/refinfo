@@ -223,19 +223,25 @@ System.out.println(str.getX());
 	  -->系统变量-->CLASSPATH（无则新建）中添加 .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
 	  -->若成功，则javac有输出值
 ```
-##20.1 java查看源码  
+## 20.1 java查看源码  
 ```
     手动: 下载*.tar.gz的jdk包--src.zip(源码，*.exe中无此文件)-->欲附加源码的jar，右键，properties-->External File.. ,src.zip  
     IDE自动下载(maven): window-->preference-->maven-->勾选，download  sources / javaDoc  
 ```
-##20.3 try-with-resource 资源自动关闭,实现了Closeable接口的类    
+## 20.3 try-with-resource 资源自动关闭,实现了Closeable接口的类    
     注：1）try后面()中打开的资源会在{}代码执行完成/异常后自动关闭  
         2) 可结合catch、finally使用，在资源关闭后执行
     try (
       java.util.zip.ZipFile zf = new java.util.zip.ZipFile(zipFileName);
       java.io.BufferedWriter writer = java.nio.file.Files.newBufferedWriter(outputFilePath, charset)
     ) {}
-##20.5 解析html jsoup  
+## 20.5 解析html jsoup  
+## 20.6 java初始化
+```java
+1) int[] a = { 5, 4, 2, 4, 9, 1 };
+2) class中的int默认值0，对象默认值null
+3) 初始化顺序，先静态对象，再非静态对象
+```
 
 #eclipse
 **快捷键** 
