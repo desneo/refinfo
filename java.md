@@ -246,6 +246,13 @@ public void println(String x) {
 public synchronized boolean add(E e) {}
 ```
 
+**transient**
+```
+0)变量将不被序列化，即反序列化后无值。(transient Object[] elementData)。transient只可修饰对象属性(不能func/class/局部变量)
+1)serilization--序列化，将对象转成字节(供存储或网络发送)。deserilization-反序列化，将字节重建成对象。(类似js的stringfy和parseJson,两个独立的对象)
+2)将需要序列化的类实现Serializable接口就可以
+```
+
 #20.Java其它  
 ## 20.0 java配置
 ```
