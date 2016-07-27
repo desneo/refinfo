@@ -191,9 +191,10 @@ channel.read(buffer, 0, buffer,
         endDate = Date.valueOf("1964");
      }
 ```
-**this**
+**this/super**
 ```
-1)指当前对象自己
+1)this 指当前对象自己 (可用于返回对象自己)  
+2)super指代父类。a)super() 调用父类中的初始化方法  b)super.ss()	 调用父类中方法/属性
 ```
 
 **泛型**
