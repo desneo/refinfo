@@ -44,7 +44,8 @@ Node(Node<E> prev, E element, Node<E> next) {
     this.prev = prev;
 }
 ```
-**Vector 线程安全，效率低，（底层数组）**  
+**Vector 线程安全，效率低（实现同ArrayList,底层数组,方法加synchronized）**  
+
 
 ##2.4 集合转换  
     Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
