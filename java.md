@@ -150,7 +150,8 @@ channel.read(buffer, 0, buffer,
 
 ##3.10 文件修改通知 WatchService
 
-# 7.Java反射
+
+# 17.Java反射
 ```
   1) Hibernate中，将select返回的结果封装成对象返回
   2）
@@ -225,6 +226,23 @@ System.out.println(in.getX());
 
 ObjectFoo<String> str = new ObjectFoo<String>("asdasd");
 System.out.println(str.getX());
+```
+
+**synchronized同步锁**  
+	1)所有对象自动含有单一的锁，当在对上调用其任一synchronized时，对象都被锁住。  
+	2)当任务要执行被synchronized关键字保护的代码片段的时候，它将首先检查锁是否可用，然后获取锁，执行代码，释放锁。  
+	3)对象里所有的synchronized方法共享一把锁  
+	4)在并发时，将域设置成private很重要，否则synchronized关键字就不能防止其他任务直接访问域  
+	5)用于static方法时，所有对象共享同一把锁  
+```java
+//用于代码块--优先
+public void println(String x) {
+    synchronized (this) {
+        print(x);
+        newLine();
+    }
+//用于方法
+public synchronized boolean add(E e) {}
 ```
 
 #20.Java其它  
