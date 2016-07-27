@@ -282,6 +282,21 @@ public synchronized boolean add(E e) {}
 2) class中的int默认值0，对象默认值null
 3) 初始化顺序，先静态对象，再非静态对象
 ```
+## 20.15 Java字符编码
+```java
+1)java程序内部字符集使用unicode表示的（2字节），但unicode只定义了表示，没有定义存储字符时的表示方法。
+2)只有当从外部引入byte[]或向外部输出byte[]时才需要指定编码。如socket、file操作等！  
+//编码转换,字符省略时默认'utf-8'  
+String ss = "周123"; 
+System.out.println(new String(ss.getBytes("UTF-8"), "UTF-8"));
+//当前运行时的字符集
+Charset.defaultCharset().displayName();
+//是否支持字符集  
+Charset.isSupported("gbk");
+//当前支持的所有字符集
+Set<String> charsetNames = Charset.availableCharsets().keySet();
+```
+
 
 #eclipse
 **快捷键** 
