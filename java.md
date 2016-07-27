@@ -36,6 +36,14 @@
 1) 容量不足时每次扩容1/2，会触发一次数组复制动作
 ```
 **LinkedList 查询慢，增删快，非线程安全（底层链表）**  
+```java
+//链表实现，Node<E>
+Node(Node<E> prev, E element, Node<E> next) {
+    this.item = element;
+    this.next = next;
+    this.prev = prev;
+}
+```
 **Vector 线程安全，效率低，（底层数组）**  
 
 ##2.4 集合转换  
