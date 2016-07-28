@@ -155,6 +155,9 @@ channel.read(buffer, 0, buffer,
 Date	日期
 SimpleDateFormat	日期格式
 GreogrianCalendar	日历
+TimeUnit.SECONDS.sleep(10);	/封装，增加可读性
+Thread.sleep(10);	//毫秒数
+
 ```
 **时区**  
 ```java
