@@ -104,15 +104,24 @@ Node(Node<E> prev, E element, Node<E> next) {
 
 
 ##2.4 集合转换  
-    Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
-    List-->Set: Set<String> listSet = new HashSet<String>(list);  
-    Set-->Array: set.toArray(arr);  
-    Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
-    List-->Array: list.toArray();  
-    Array-->List: Arrays.asList(array);  
-    Map-->Set:  
-        Set<String> mapValuesSet = new HashSet<String>(map.values()); 
-        List<String> mapKeyList = new ArrayList<String>(map.keySet()); 
+```
+Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
+List-->Set: Set<String> listSet = new HashSet<String>(list);  
+Set-->Array: set.toArray(arr);  
+Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
+List-->Array: list.toArray();  
+Array-->List: Arrays.asList(array);  
+Map-->Set:  
+  Set<String> mapValuesSet = new HashSet<String>(map.values()); 
+  List<String> mapKeyList = new ArrayList<String>(map.keySet());
+```
+
+## 2.5 Queue队列
+```
+PriorityQueue-优先队列-【可】自定义优先级,实现Comparator接口来改变优先级。当调用peek()、poll和remove()方法时，获取的将是队列中优先级最高的元素！(详见list自定义排序)
+```
+## 2.6 Stack栈
+ 
 
 #3.Java I/O（SE7）
 ##3.1 Path 位置/路径
