@@ -1,24 +1,29 @@
 #2.Java集合  
 ##2.1 Set  
+```
+定义equals()方法（int、string已自带）以确保对象唯一性。无序。
+```
 **HashSet 常用，可null**
 ```
-	源码中使用HashMap实现（只使用Key部分功能）  
-	HashSet<BigDecimal> ss = new HashSet<>();  
-	ss.add(new BigDecimal(123));  
+//1) 源码中使用HashMap实现（只使用Key部分功能）  
+HashSet<BigDecimal> ss = new HashSet<>();  
+ss.add(new BigDecimal(123));  
 ```
 **LinkedHashSet 按插入顺序迭代**  
 ```
-	节点上维护着双重列表，即可知道插入顺序  
+1)兼具速度与顺序，节点上维护着双重列表，即可知道插入顺序  
+2)元素必须定义hashCode()方法来确保唯一性(或默认)
 ```
 **TreeSet 按指定方式排序** 
 ```
-	可用Comparator指定排序方式，  
+1)按插入顺序保存，将元素存储在红-黑树数据结构中。
+2)自定义排序方式，实现Comparable接口，详见见List中排序
 ```
 ##2.2 MAp  
 **HashMap 常用**
 ```
-	HashMap<String , Double> map = new HashMap<>(); 
-	map.put("语文" , 80.0);
+HashMap<String , Double> map = new HashMap<>(); 
+map.put("语文" , 80.0);
 ```
 **HashTable 线程安全**  
 **LinkedHashMap按插入顺序**  
