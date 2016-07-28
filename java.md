@@ -30,12 +30,47 @@
 	prop.load(fis); 
  ``` 
 ##2.3 List
+**List排序**
+```
+//默认逆排序，List内的Object都必须实现了Comparable接口，否则报错
+Collections.sort(arrayList );
+Collections.reverse(arrayList );
+
+//自定义排序
+//1) 临时声明一个Comparator来实现排序， 	public int compare(Object a, Object b){} 返回值大于0则a在后
+////对输出结果进行排序，最新的在最前面--20140613增加，周绍华
+List<TaskHead> list = new ArrayList<TaskHead>();
+Collections.sort(list, new Comparator<TaskHead>(){
+	public int compare (TaskHead t1, TaskHead t2){
+		return t2.getId().compareTo(t1.getId());
+	}
+});
+
+//2)自定义class实现Comparable接口
+class Employee implements Comparable<Employee>
+{
+    private int id;
+    
+    //返回值>0,则this被排在后面,arg0放前面; <0则this在前面。
+    public int compareTo(Employee other)
+    {
+        if (id < other.id)
+            return -1;
+        if (id > other.id)
+            return 1;
+        return 0;
+    }
+}
+
+```
+
 **ArrayList 常用，查询快，增删慢，非线程安全（底层数组）**  
 ```
 //内部Object[]实现
 1) 容量不足时每次扩容1/2，会触发一次数组复制动作
 ```
 **LinkedList 查询慢，增删快，非线程安全（底层链表）**  
+//可当作堆栈、队列和双向队列使用， addFirst() 、getLast() 、 removeFirst()
 ```java
 //链表实现，Node<E>
 Node(Node<E> prev, E element, Node<E> next) {
