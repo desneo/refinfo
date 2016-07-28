@@ -122,7 +122,17 @@ PriorityQueue-优先队列-【可】自定义优先级,实现Comparator接口来
 ```
 ## 2.6 Stack栈
  
+# 3.Java多线程
+**synchronized同步锁**
 
+**concurrent--并发工具包**
+```java
+//以下类都线程安全
+ConcurrentHashMap 
+LinkedBlockingQueue --线程安全的阻塞(继承BlockingQueue)队列，可以指定容量，也可以不指定，不指定则默认值最大Integer.MAX_VALUE，其中主要用到put和take方法 ，put方法在队列满的时候会阻塞直到有队列成员被消费，take方法在队列空的时候会阻塞，直到有队列成员被放进来。
+ConcurrentLinkedQueue -- 非阻塞队列，当queue为空时不阻塞，而是返回null，需要程序自己进行处理
+
+```
 # 4.Java时间
 ```
 Date	日期
