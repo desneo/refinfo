@@ -27,14 +27,20 @@ ss.add(new BigDecimal(123));
 2)自定义排序方式，实现Comparable接口，详见见List中排序
 ```
 ##2.2 MAp  
-**HashMap 常用**
+**HashMap 常用，可null**
 ```
 HashMap<String , Double> map = new HashMap<>(); 
 map.put("语文" , 80.0);
 ```
-**HashTable 线程安全**  
+**HashTable 线程安全,继承Dictionary,key/value不可为null，**  
 **LinkedHashMap按插入顺序**  
-**TreeMap 可自定义排序**  
+```
+遍历次序按照插入顺序进行，比HashMap慢一点，但迭代访问更快，因其内部是使用数组实现。
+```
+**TreeMap 可自定义排序** 
+```
+基于红黑树的实现，次序由Comparator决定。详见List中自定义顺序例子
+```
 **Properties *.properties文件**  
 ```
 	Properties prop = new Properties(); 
