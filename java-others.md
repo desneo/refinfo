@@ -1,3 +1,33 @@
+# 19. enum枚举类型
+```java
+	Color xx = Color.RED;
+	switch (xx)
+	{
+	    case RED:
+	        System.out.println(xx.getValue());
+	        break;
+	    default:
+	        break;
+	}
+public class EnumTest
+{
+    public static enum Color
+    {
+       //enum可给定值
+        RED("AA"), YELLOW("ff");
+        private String name;
+        private Color(String namein)
+        {
+            this.name = namein;
+        }
+        public String getValue()
+        {
+            return name;
+        }
+    }
+}
+```
+
 #20.Java其它  
 ## 20.0 java配置
 ```
