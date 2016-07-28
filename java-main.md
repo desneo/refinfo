@@ -27,6 +27,9 @@ ss.add(new BigDecimal(123));
 2)自定义排序方式，实现Comparable接口，详见见List中排序
 ```
 ##2.2 MAp  
+```
+1)负载因子--空表是0，半满状是0.5，默认0.75，每次扩容容量加倍
+```
 **HashMap 常用，可null**
 ```
 HashMap<String , Double> map = new HashMap<>(); 
