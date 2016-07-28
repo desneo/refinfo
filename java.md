@@ -150,6 +150,62 @@ channel.read(buffer, 0, buffer,
 
 ##3.10 文件修改通知 WatchService
 
+# 4.Java时间
+```
+Date	日期
+SimpleDateFormat	日期格式
+GreogrianCalendar	日历
+```
+**时区**  
+```java
+//GMT,自1970.1.1 00:00:00开始的毫秒数
+System.currentTimeMillis();
+//获取当前的时区(jvm默认使用操作系统时区)
+System.out.println(TimeZone.getDefault());
+System.out.println(new Date());
+//设置项目时区
+TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+System.out.println(TimeZone.getDefault());
+//所有Date都是GMT时间，在格式化输出时会根据当前时区进行增减
+System.out.println(new Date());
+System.out.println(new Date(System.currentTimeMillis() + 28800000));
+```
+**时间<-->字符串**  
+```
+//时间转字符串
+SimpleDateFormat dateFormat = new SimpleDateFormat(
+        "yyyy-MM-dd HH:mm:ss");
+String dateTime = dateFormat.format(new Date());
+System.out.println(new Date());
+System.out.println(new Date().getTime());
+
+//字符串转时间，减去当前时区，再转GMT
+String dateStr = dateTime;
+//dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
+Date dateTmp = dateFormat.parse(dateStr);
+System.out.println(dateTmp);
+System.out.println(dateTmp.getTime());
+```
+
+**String/Date<-->TimeStamp**
+```
+//1) TimeStamp在util.Date上增加了毫微秒的时间访问控制，getNanos（）， 格式 2016-07-28 12:51:56.919
+//2) 是为了与数据库中的Timestamp数据类型进行匹配
+System.out.println(new Timestamp(new Date().getTime()));	//Date-->TimeStamp
+System.out.println(new Date(new Timestamp(System.currentTimeMillis()).getTime()));	//TimeStamp-->date
+//string --> TimeStamp, 先转成Date
+```
+
+**Calendar日历**  
+```
+//计算一年中的第几个星期是几号
+SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd"); 
+Calendar cal=Calendar.getInstance(); 
+cal.set(Calendar.YEAR, 2006); 
+cal.set(Calendar.WEEK_OF_YEAR, 1); 
+cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY); 
+System.out.println(df.format(cal.getTime()));
+```
 
 # 17.Java反射
 ```
