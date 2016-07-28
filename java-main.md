@@ -1,5 +1,12 @@
-#2.Java集合  
-##2.1 Set  
+# 2.Java集合  
+## 2.0使用方法
+```
+//1)容器.iterator() 要求容器返回一个Iterator。单向，无关类型
+//2)next() 下一个元素; hasNext(); it.remove() 将返回的元素删除
+Collections.min(Collection)		//最小值
+Collections.max(Collection, Comparator);	//自定义比较方法
+```
+## 2.1 Set  
 ```
 定义equals()方法（int、string已自带）以确保对象唯一性。无序。
 ```
