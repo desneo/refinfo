@@ -297,9 +297,11 @@ System.out.println(df.format(cal.getTime()));
 ```
 **final**
 ```
-  值不可改变
-  1)final int i=100 , i值不能改变
-  2)final File f=new File("c:\\test.txt"); //f不能重新赋值，但f.xx可以
+1)属性/func参数--值不可改变
+  a)final int i=100 , i值不能改变
+  b)final File f=new File("c:\\test.txt"); //f不能重新赋值，但f.xx可以
+2)方法--子类不得覆盖重写该方法，确保在继承中使方法行为保持不变
+3)class--表明不打算继承该类，而且也不允许别人继承。 fianl class Art {}
 ```
 **static**
 ```
