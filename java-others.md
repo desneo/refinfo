@@ -1,3 +1,21 @@
+# 18.Java异常
+```java
+//java7
+try {     
+} catch (FileNotFoundException | ParseException | ConfigurationException e) {
+	System.err.println("Config file '" + fileName + "' is missing or malformed");   
+} catch (IOException iox) {     
+	System.err.println("Error while processing file '" + fileName + "'");   
+	throw e;	//抛出异常
+	throw new NullpointException();
+} 
+```
+**自定义异常**
+```
+//最重要的是异常名字
+class SimpleException extends Exception{}
+```
+
 # 19. enum枚举类型
 ```java
 	Color xx = Color.RED;
