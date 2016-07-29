@@ -96,8 +96,9 @@ channel.read(buffer, 0, buffer,
       java.io.BufferedWriter writer = java.nio.file.Files.newBufferedWriter(outputFilePath, charset)
     ) {}
 
-##3.10 文件修改通知 WatchService
+## 3.10 文件修改通知 WatchService
 
+## 3.11读取网络文件
 
 # 10.Java字符串
 **StringBuilder和StringBuffer**
@@ -118,17 +119,14 @@ c -> { return c.size(); }	//只有一个参数自动推导
 ```
 **lambdas的用处**
 ```java
-//自动将入参匹配到一个函数(入参个数)，达到同等功能效果
-//典型的替换Runnable / Comparator
-Thread oldSchool = new Thread( new Runnable () {
-	@Override
-	public void run() {
-	    System.out.println("This is from an anonymous class.");
-	}
-	} );
-//转换后
-Thread gaoDuanDaQiShangDangCi = new Thread( () -> {
-	System.out.println("This is from an anonymous method (lambda exp).");} )
+//自动将入参匹配到一个函数(按入参个数)，达到同等功能, 典型应用的替换Runnable / Comparator
+Collections.sort(list, (o1, o2) -> {
+    return Math.abs(o1 - 160) - Math.abs(o2 - 160);
+});
+//forEach循环
+list.forEach((t) -> {
+    System.out.println(t);
+});
 ```
 
 # 17.Java反射-reflect
