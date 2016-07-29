@@ -52,7 +52,7 @@ map.put("语文" , 80.0);
  ``` 
 ##2.3 List
 **List排序**
-```
+```java
 //默认逆排序，List内的Object都必须实现了Comparable接口，否则报错
 Collections.sort(arrayList );
 Collections.reverse(arrayList );
