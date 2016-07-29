@@ -224,12 +224,43 @@ eclispe各种视图 -->Window-->Showview-->Other
 	关键字颜色：[方案2](http://blog.csdn.net/etjnety/article/details/7846703/)  
 ```
 
+**远程debug**
+```
+下一个断点: F8  单步： F6	  进入： F5  
+查看变量：　debug视图--》 Variables --> 变量名--》voProperties --> properties -->table即可  
 
+--》打开远程debug： debug图标 --> debug configuration -->  Remote java Application --》 配置地址端口--》 勾选"Allow termination of remote VM"
+--》 查看debug远程端口：  /home/business/opt/container/bin/catalina.sh -->  搜索 Xdebug --》（常用:8090）
+-->打开debug视图 --》 右上角 open persperctive --> debug
+```
+    
+# maven
+**安装**
+```
+注：下载后解压即可(先安装jdk), 升级下载最新包，修改M2_HOME值即可
+1.在“系统变量”中增加一个变量，名 M2_HOME , 值 H:\program\apache-maven-3.2.3 （Maven的安装路径）。 
+2.在“ 系统变量”Path中末尾加 %M2_HOME%\bin;	
 
-#远程debug  
-    下一个断点: F8  单步： F6	  进入： F5  
-    查看变量：　debug视图--》 Variables --> 变量名--》voProperties --> properties -->table即可  
+配置完成，以下两条指令可执行成功：
+echo %M2_HOME%		//变量是否指向了正确的安装目录
+mvn  -v			//能否正确找到mvn的执行脚本
+```
 
-    --》打开远程debug： debug图标 --> debug configuration -->  Remote java Application --》 配置地址端口--》 勾选"Allow termination of remote VM"
-    --》 查看debug远程端口：  /home/business/opt/container/bin/catalina.sh -->  搜索 Xdebug --》（常用:8090）
-    -->打开debug视图 --》 右上角 open persperctive --> debug
+**IDE中配置maven**
+```
+window-->preference-->搜索maven-->Installations-->add
+```
+
+**maven原理**
+```
+//传递性依赖
+   例子：项目有一个Spring-aop:4.1.1.RELEASE的依赖，而实际上Spring-aop也有自己的依赖（maven仓库中的pom.xml），maven自动解析依赖获得依赖的包。
+//依赖冲突的处理
+   如果项目A有这样的依赖关系：A->B->C->X(1.0)、A->D->X(2.0), 这样依赖路径上有两个版本的X。原则如下：
+   1.路径最近者优先。如上1.0的路径长度是3，2.0的长度是2，则2.0的X会被使用。
+   2.路径长度相同时，第一声明者优先。即在pom.xml中使用先声明的那个。
+
+查看依赖信息
+   mvn dependency:tree 优先 --> 解析成依赖树，可以看出某个依赖是从哪个路径引入的。
+   mvn dependency:list 	--> 解析并显示依赖列表。 列出所有依赖的文件。
+```
