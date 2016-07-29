@@ -131,8 +131,39 @@ PriorityQueue-优先队列-【可】自定义优先级,实现Comparator接口来
 ConcurrentHashMap 
 LinkedBlockingQueue --线程安全的阻塞(继承BlockingQueue)队列，可以指定容量，也可以不指定，不指定则默认值最大Integer.MAX_VALUE，其中主要用到put和take方法 ，put方法在队列满的时候会阻塞直到有队列成员被消费，take方法在队列空的时候会阻塞，直到有队列成员被放进来。
 ConcurrentLinkedQueue -- 非阻塞队列，当queue为空时不阻塞，而是返回null，需要程序自己进行处理
-
 ```
+# 3.5 Excutor-线程池，启动线程的优选方法
+**newCatchedThreadPool-少用**  
+```java
+//线程复用，CatchedThreadPool将为每个任务都创建一个线程。然后在它回收旧线程时停止创建新线程
+//使用静态的Excutor方法创建！ 当前的main线程继续运行，在Executor中的所有任务完成之后尽快退出。
+ExecutorService exec = Executors.newCachedThreadPool();
+for(int i=0; i<3; i++){
+	exec.execute(new LiftOff());
+}
+//shutdown()方法的调用可以防止新任务被提交给Executor。
+exec.shutdown();
+```
+
+**newFixedThreadPool-常用-数量固定，线程复用**
+```java
+//线程复用，newFixedThreadPool预先一次性执行线程分配，使用有限的线程集来执行所提交的任务-线程池。
+//预先一次性执行代价高昂的线程分配，而不必为每个任务都固定的创建线程，节省时间。
+//可看出每次同时执行的只有两个线程
+ExecutorService exec = Executors.newFixedThreadPool(2);
+for(int i=0; i<4; i++){
+	exec.execute(new LiftOff());
+}
+exec.shutdown();
+```
+
+**newSingleThreadPool-数量1的newFixedThreadPool**
+```java
+如果向newSingleThreadPool提交了多个任务，那么这些任务将排队，每个任务都会在下一个任务开始之前结束。
+使用场景，如多个线程都需要使用文件系统，可免去同步的操作。
+```
+
+
 # 4.Java时间
 ```
 Date	日期
