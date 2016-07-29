@@ -133,6 +133,8 @@ LinkedBlockingQueue --线程安全的阻塞(继承BlockingQueue)队列，可以�
 ConcurrentLinkedQueue -- 非阻塞队列，当queue为空时不阻塞，而是返回null，需要程序自己进行处理
 ```
 # 3.5 Excutor-线程池，启动线程的优选方法
+**定义任务类class--实现Runnable接口的run方法**
+
 **newCatchedThreadPool-少用**  
 ```java
 //线程复用，CatchedThreadPool将为每个任务都创建一个线程。然后在它回收旧线程时停止创建新线程
