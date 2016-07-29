@@ -61,11 +61,18 @@ Collections.reverse(arrayList );
 //1) 临时声明一个Comparator来实现排序， 	public int compare(Object a, Object b){} 返回值大于0则a在后
 ////对输出结果进行排序，最新的在最前面--20140613增加，周绍华
 List<TaskHead> list = new ArrayList<TaskHead>();
-Collections.sort(list, new Comparator<TaskHead>(){
-	public int compare (TaskHead t1, TaskHead t2){
-		return t2.getId().compareTo(t1.getId());
-	}
+//按离160最近距离排序
+Integer[] zz = {100, 150, 200, 0};
+List<Integer> xx = Arrays.asList(zz);
+System.out.println(xx);
+Collections.sort(xx, new Comparator<Integer>()
+{
+    public int compare(Integer o1, Integer o2)
+    {
+        return Math.abs(o1 - 160) - Math.abs(o2 - 160);
+    }
 });
+System.out.println(xx);
 
 //2)自定义class实现Comparable接口
 class Employee implements Comparable<Employee>
