@@ -1,3 +1,11 @@
+# 1.Java试题
+```java
+1) Double xx = (double)(7 / 4);	//xx=1.0
+2) int intzero = 0;
+   char charzero = '0';
+   System.out.println(intzero + charzero);	//48
+3) 
+```
 
 #3.Java I/O（SE7）
 ##3.1 Path 位置/路径
