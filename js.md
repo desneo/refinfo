@@ -1,5 +1,5 @@
 # 3.js作用域
-···javascript
+```javascript
 1) function级 或 let/const(块级作用域)
 2) let--es6, let声明的变量不允许重复声明 let bar= foo*2;
 3) const-es6, 块级常量不可修改 const b = 4;
