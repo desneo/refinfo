@@ -205,8 +205,7 @@ public class EnumTest
 
 ## 20.5 解析html jsoup  
 
-```
-## 20.15 Java字符编码
+##20.15 Java字符编码 
 ```java
 1)java程序内部字符集使用unicode表示的（2字节），但unicode只定义了表示，没有定义存储字符时的表示方法。
 2)只有当从外部引入byte[]或向外部输出byte[]时才需要指定编码。如socket、file操作等！  
