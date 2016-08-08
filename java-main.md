@@ -1,6 +1,6 @@
 # 2.Java集合  
 ## 2.0使用方法
-```
+```java
 //1)容器.iterator() 要求容器返回一个Iterator。单向，无关类型
 //2)next() 下一个元素; hasNext(); it.remove() 将返回的元素删除
 Collections.min(Collection)		//最小值
@@ -9,7 +9,7 @@ Collections.max(Collection, Comparator);	//自定义比较方法
 
 
 ## 2.1 集合转换  
-```
+```java
 Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
 List-->Set: Set<String> listSet = new HashSet<String>(list);  
 Set-->Array: set.toArray(arr);  
