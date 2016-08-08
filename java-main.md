@@ -6,51 +6,21 @@
 Collections.min(Collection)		//最小值
 Collections.max(Collection, Comparator);	//自定义比较方法
 ```
-## 2.1 Set  
+
+
+## 2.1 集合转换  
 ```
-定义equals()方法（int、string已自带）以确保对象唯一性。无序。
+Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
+List-->Set: Set<String> listSet = new HashSet<String>(list);  
+Set-->Array: set.toArray(arr);  
+Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
+List-->Array: list.toArray();  
+Array-->List: Arrays.asList(array);  
+Map-->Set: Set<String> mapValuesSet = new HashSet<String>(map.values()); 
+Map-->List: List<String> mapKeyList = new ArrayList<String>(map.keySet());
 ```
-**HashSet 常用，可null**
-```
-//1) 源码中使用HashMap实现（只使用Key部分功能）  
-HashSet<BigDecimal> ss = new HashSet<>();  
-ss.add(new BigDecimal(123));  
-```
-**LinkedHashSet 按插入顺序迭代**  
-```
-1)兼具速度与顺序，节点上维护着双重列表，即可知道插入顺序  
-2)元素必须定义hashCode()方法来确保唯一性(或默认)
-```
-**TreeSet 按指定方式排序** 
-```
-1)按插入顺序保存，将元素存储在红-黑树数据结构中。
-2)自定义排序方式，实现Comparable接口，详见见List中排序
-```
-##2.2 MAp  
-```
-1)负载因子--空表是0，半满状是0.5，默认0.75，每次扩容容量加倍
-```
-**HashMap 常用，可null**
-```
-HashMap<String , Double> map = new HashMap<>(); 
-map.put("语文" , 80.0);
-```
-**HashTable 线程安全,继承Dictionary,key/value不可为null，**  
-**LinkedHashMap按插入顺序**  
-```
-遍历次序按照插入顺序进行，比HashMap慢一点，但迭代访问更快，因其内部是使用数组实现。
-```
-**TreeMap 可自定义排序** 
-```
-基于红黑树的实现，次序由Comparator决定。详见List中自定义顺序例子
-```
-**Properties *.properties文件**  
-```
-	Properties prop = new Properties(); 
-	FileInputStream fis = new FileInputStream("prop.properties");
-	prop.load(fis); 
- ``` 
-##2.3 List
+
+##2.2 List
 **List排序**
 ```java
 //默认逆排序，List内的Object都必须实现了Comparable接口，否则报错
@@ -107,19 +77,63 @@ Node(Node<E> prev, E element, Node<E> next) {
     this.prev = prev;
 }
 ```
-**Vector 线程安全，效率低（实现同ArrayList,底层数组,方法加synchronized）**  
+**Vector 线程安全，效率低（实现同ArrayList,底层数组,方法加synchronized）**
 
 
-##2.4 集合转换  
+##2.3 MAp  
 ```
-Set-->List：ArrayList<BigDecimal> tempArrayList = new ArrayList<>(ss);  
-List-->Set: Set<String> listSet = new HashSet<String>(list);  
-Set-->Array: set.toArray(arr);  
-Array-->Set: Set<String> set = new HashSet<String>(Arrays.asList(arr));  
-List-->Array: list.toArray();  
-Array-->List: Arrays.asList(array);  
-Map-->Set: Set<String> mapValuesSet = new HashSet<String>(map.values()); 
-Map-->List: List<String> mapKeyList = new ArrayList<String>(map.keySet());
+1)负载因子--空表是0，半满状是0.5，默认0.75，每次扩容容量加倍
+```
+**遍历map**
+```java
+1) for (Map.Entry<Integer, Integer> entry : map.entrySet()) {}
+2) for (Integer key : map.keySet()) { }
+3) Iterator<Map.Entry<Integer, Integer>> entries = map.entrySet().iterator(); 
+   while (entries.hasNext()) {  
+      Map.Entry<Integer, Integer> entry = entries.next();  
+   }
+```
+
+**HashMap 常用，可null**
+```
+HashMap<String , Double> map = new HashMap<>(); 
+map.put("语文" , 80.0);
+```
+**HashTable 线程安全,继承Dictionary,key/value不可为null，**  
+**LinkedHashMap按插入顺序**  
+```
+遍历次序按照插入顺序进行，比HashMap慢一点，但迭代访问更快，因其内部是使用数组实现。
+```
+**TreeMap 可自定义排序** 
+```
+基于红黑树的实现，次序由Comparator决定。详见List中自定义顺序例子
+```
+**Properties *.properties文件**  
+```
+	Properties prop = new Properties(); 
+	FileInputStream fis = new FileInputStream("prop.properties");
+	prop.load(fis); 
+ ``` 
+
+## 2.4 Set  
+```
+定义equals()方法（int、string已自带）以确保对象唯一性。无序。
+```
+**HashSet 常用，可null**
+```
+//1) 源码中使用HashMap实现（只使用Key部分功能）  
+HashSet<BigDecimal> ss = new HashSet<>();  
+ss.add(new BigDecimal(123));  
+```
+**LinkedHashSet 按插入顺序迭代**  
+```
+1)兼具速度与顺序，节点上维护着双重列表，即可知道插入顺序  
+2)元素必须定义hashCode()方法来确保唯一性(或默认)
+```
+**TreeSet 按指定方式排序** 
+```
+1)按插入顺序保存，将元素存储在红-黑树数据结构中。
+2)自定义排序方式，实现Comparable接口，详见见List中排序
 ```
 
 ## 2.5 Queue队列
