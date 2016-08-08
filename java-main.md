@@ -21,6 +21,18 @@ Map-->List: List<String> mapKeyList = new ArrayList<String>(map.keySet());
 ```
 
 ##2.2 List
+**过滤list**  
+```java
+//1--
+Iterator<Foo> it = col.iterator();
+while( it.hasNext() ) {
+  Foo foo = it.next();
+  if( !condition(foo) ) it.remove();
+}
+//2--java8-steam
+List<Person> olderThan30 = personList.stream().filter(p -> p.age >= 30).collect(Collectors.toList());
+//3--Use CollectionUtils.filter(Collection,Predicate), from Apache Commons.
+```
 **List排序**
 ```java
 //默认逆排序，List内的Object都必须实现了Comparable接口，否则报错
