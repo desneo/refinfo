@@ -262,14 +262,29 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
     Files.exist(path);  //是否存在
     Files.readAttributes(path, "*") //文件属性
 ```
-**读取文件**
+**读文件**
 ```java
-java7:
+//java7:
 List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 byte[] bytes = Files.readAllBytes(path);  
-java8: Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小  
+//java8
+Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小
+//从jar包中读配置文件
+//getResourceAsStream入参中如果开头'/',则从jar包的根目录找起；
+//否则以*.class文件所在的目录往下匹配文件
+InputStream in = TestClass.class.getResourceAsStream("/config/activejs/xx.js");
+BufferedReader br=new BufferedReader(new InputStreamReader(in));  
+String s="";  
+while(true) { 
+	String xx = br.readLine();
+	if( null == xx){
+		break;
+	}
+	s += xx;
+}
+System.out.println(s);
 ```
-**写入文件**
+**写文件**
 ```java
 try(BufferedWriter writer = Files.newBufferedWriter(path, StandardCharsets.UTF_8, StandardOpenOption.WRITE)){
     writer.write("Hello World!");
@@ -289,7 +304,7 @@ channel.read(buffer, channel.size()-100);
 ByteBuffer buffer = ByteBuffer.allocate(1000);
 //异步方式打开文件
 AsynchronousFileChannel channel = AsynchronousFileChannel.open(path);
-//读取文件
+//读文件
 channel.read(buffer, 0, buffer,
         new CompletionHandler<Integer, ByteBuffer>()
         {
@@ -603,7 +618,7 @@ try{}catch(){} finally{//此处代码总会执行}
 3)只有当从外部引入byte[]或向外部输出byte[]时才需要指定编码。如socket、file操作等！  
 //编码转换,字符省略时默认'utf-8'  
 String ss = "周123"; 
-System.out.println(new String(ss.getBytes("UTF-8"), "UTF-8"));
+System.out.println(new String(ss.getBytes("UTF-8"), StandardCharsets.UTF_8));
 //当前运行时的字符集
 Charset.defaultCharset().displayName();
 //是否支持字符集  
@@ -634,7 +649,14 @@ Ctrl+D  删除当前行
 Ctrl+o  当前文件的属性和方法  
 Ctrl+H  搜索  
 eclispe各种视图 -->Window-->Showview-->Other  
-``` 
+```
+**插件**  
+```
+1) 在线安装：eclipse-->help-->marketpalce
+   离线：插件jar包放在eclipse下plugin目录
+2) 打开文件文件： Open Explorer (市场中名字eclispe explorer)
+```
+
 **配置** 
 ```
 1)[关闭变量名后自动补全类型字符](http://www.itnose.net/detail/6143864.html)  
