@@ -270,8 +270,8 @@ byte[] bytes = Files.readAllBytes(path);
 //java8
 Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小
 //从jar包中读配置文件
-//getResourceAsStream入参中如果开头'/',则从jar包的根目录找起；
-//否则以*.class文件所在的目录往下匹配文件
+//getResourceAsStream入参中如果开头'/',则从jar包的根目录找起；否则以*.class文件所在的目录往下匹配文件
+//文件绝对路径(但不可读取)：String xx = TestClass.class.getResource("/config/activejs/xx.js").getPath();
 InputStream in = TestClass.class.getResourceAsStream("/config/activejs/xx.js");
 BufferedReader br=new BufferedReader(new InputStreamReader(in));  
 String s="";  
