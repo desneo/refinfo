@@ -12,20 +12,22 @@
 		![插入的图片](http://cdn.sspai.com/attachment/thumbnail/2014/04/15/f96c892fc63933ab186235f7c910753b10f77_mw_800_wm_1_wmp_3.jpg)
 	列表
   
-#git  
-    索引词：git关键字、github关键字  
-    1、生成公私钥对： ssh-keygen -t rsa -C "desneo@163.com"  
-    	（不需密码，默认即可）， 用户主目录（/c/Users/Administrator/.ssh）下生成id_rsa和id_rsa.pub文件  
-    2、github设置账户公钥：settings-->SSH and GPG keys -->New SSH key --> 将公钥内容全部复制-->添加  
-    3、获取远程仓库，并命名别名：  
-    	//不要使用 git clone https://github.com/desneo/refinfo （https形式，否则每次push都要输入用户名目录）  
-    	git clone git@github.com:desneo/refinfo.git  
-    	git remote add refinfo git@github.com:desneo/refinfo.git  
-    4、推送到远程仓库：  
-    	git add tool.md	//添加修改的文件  
-    	git commit -m '修改的注释'  	
-    	git push refinfo gh-pages	//本地仓库推送到指定分支  
-
+# git  
+```
+索引词：git关键字、github关键字  
+1、生成公私钥对： ssh-keygen -t rsa -C "desneo@163.com"  
+    （不需密码，默认即可）， 用户主目录（/c/Users/Administrator/.ssh）下生成id_rsa和id_rsa.pub文件  
+2、github设置账户公钥：settings-->SSH and GPG keys -->New SSH key --> 将公钥内容全部复制-->添加  
+3、获取远程仓库，并命名别名：  
+    //不要使用 git clone https://github.com/desneo/refinfo （https形式，否则每次push都要输入用户名目录）  
+    git clone git@github.com:desneo/refinfo.git  
+    git remote add refinfo git@github.com:desneo/refinfo.git  
+4、推送到远程仓库：  
+    git add tool.md	//添加修改的文件  
+    git commit -m '修改的注释'  	
+    git push refinfo gh-pages	//本地仓库推送到指定分支  
+5、更新： git pull
+```
 
 #vim/gvim（安装目录下vimrc）
     ##打开utf-8乱码
