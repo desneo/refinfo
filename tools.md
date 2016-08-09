@@ -8,9 +8,9 @@
 代码块 -->```java, 三个`夹起，可指定语言
 标题 --> 1~6个#号，表示1~6级标题， #号后加空格
 图片与链接
-	区别在一个!号，图片需要url  
-	[baidu](www.baidu.com)  
-	![插入的图片](http://cdn.sspai.com/attachment/thumbnail/2014/04/15/f96c892fc63933ab186235f7c910753b10f77_mw_800_wm_1_wmp_3.jpg)
+  区别在一个!号，图片需要url  
+  [baidu](www.baidu.com)  
+  ![插入的图片](http://cdn.sspai.com/attachment/thumbnail/2014/04/15/f96c892fc63933ab186235f7c910753b10f77_mw_800_wm_1_wmp_3.jpg)
 列表
 ```
   
@@ -26,6 +26,7 @@
     git remote add refinfo git@github.com:desneo/refinfo.git  
 4、推送到远程仓库：  
     git add tool.md	//添加修改的文件  
+    //git add .  //添加所有变化的文件
     git commit -m '修改的注释'  	
     git push refinfo gh-pages	//本地仓库推送到指定分支  
 5、更新： git pull
