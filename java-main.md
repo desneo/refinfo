@@ -319,6 +319,12 @@ System.out.println(df.format(cal.getTime()));
 2)super指代父类。a)super() 调用父类中的初始化方法  b)super.ss()	 调用父类中方法/属性
 ```
 
+**instanceOf**  
+```java
+1) p instanceof Student
+```
+
+
 **泛型**
 ```java
 1)泛型必须是对象，不能是简单类型(int float)
