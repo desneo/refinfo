@@ -269,7 +269,7 @@ List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 byte[] bytes = Files.readAllBytes(path);  
 //java8
 Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小
-//从jar包中读配置文件
+//java6--从jar包中读配置文件
 //getResourceAsStream入参中如果开头'/',则从jar包的根目录找起；否则以*.class文件所在的目录往下匹配文件
 //文件绝对路径(但不可读取)：String xx = TestClass.class.getResource("/config/activejs/xx.js").getPath();
 InputStream in = TestClass.class.getResourceAsStream("/config/activejs/xx.js");
@@ -280,7 +280,7 @@ while(true) {
 	if( null == xx){
 		break;
 	}
-	s += xx;
+	s += (xx+"\n");
 }
 System.out.println(s);
 ```
@@ -593,8 +593,8 @@ try{}catch(){} finally{//此处代码总会执行}
 ```
 
 
-#20.Java其它  
-## 20.0 java配置
+#50.Java其它  
+## 50.0 java配置
 ```
 1)安装，jdk和jre需安装到不同目录（F:\program\java8\jdk1.8.0_102\） //java -version有值则安装成功
 2)环境变量-->系统变量-->新建JAVA_HOME，值F:\program\java8\jdk1.8.0_102(jdk的安装路径)	//windows环境变量key不区分大小写
@@ -603,15 +603,15 @@ try{}catch(){} finally{//此处代码总会执行}
 	  -->若成功，则javac有输出值
 3) 注：若javac还是无法执行，检查bin目录下是否有javac.exe,否则重装
 ```
-## 20.1 java查看源码  
+## 50.1 java查看源码  
 ```
     手动: 下载*.tar.gz的jdk包--src.zip(源码，*.exe中可能无此文件)-->欲附加源码的jar，右键，properties-->External File.. ,src.zip  
     IDE自动下载(maven): window-->preference-->maven-->勾选，download  sources / javaDoc  
 ```
 
-## 20.5 解析html jsoup  
+## 50.5 解析html jsoup  
 
-##20.15 Java字符编码 
+## 50.15 Java字符编码 
 ```java
 1)java程序内部字符集使用unicode表示的（2字节），但unicode只定义了表示，没有定义存储字符时的表示方法。
 2)内置部分字符集： StandardCharsets.UTF_8
