@@ -54,3 +54,12 @@ public int hashCode()
     return this.getFirstName().hashCode();
 }
 ```
+
+**lambda**  
+```java
+//两个冒号， objCollection.forEach(someInfrastructure::output);
+//注： 简单来讲，就是构造一个该方法的闭包。比如：
+Math::max //等效于(a, b)->Math.max(a, b)
+String::startWith  //等效于(s1, s2)->s1.startWith(s2)
+s::isEmpty //等效于()->s.isEmpty()
+```
