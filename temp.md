@@ -64,3 +64,22 @@ Math::max //等效于(a, b)->Math.max(a, b)
 String::startWith  //等效于(s1, s2)->s1.startWith(s2)
 s::isEmpty //等效于()->s.isEmpty()
 ```
+
+**泛型**
+```java
+//1、通配符？表示未知类型， 处理定义List<Object>， 但是传入list<String>时编译报错的情况（因类型擦除）。
+    public void inspect(List<Object> list)
+    {
+        for (Object obj : list)
+        {
+            System.out.println(obj);
+        }
+        list.add(1); //这个操作在当前方法的上下文是合法的。 
+    }
+  public void test()
+    {
+        List<String> strs = new ArrayList<String>();
+        inspect(strs); //编译错误, 如果不报错的话会导致往list<String>中添加了一个int 
+    }
+//2、类型擦除：使用泛型的时候加上的类型参数，会被编译器在编译的时候去掉。这个过程就称为类型擦除。类型擦除的过程，首先是找到用来替换类型参数的具体类。这个具体类一般是Object。如果指定了类型参数的上界的话，则使用这个上界。把代码中的类型参数都替换成具体的类。同时去掉出现的类型声明，即去掉<>的内容。比如: T get()方法声明就变成了Object get()； List<String>就变成了List。 接下来就可能需要生成一些桥接方法（bridge method）。这是由于擦除了类型之后的类可能缺少某些必须的方法
+```
