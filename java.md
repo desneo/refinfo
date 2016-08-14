@@ -267,11 +267,15 @@ try (DirectoryStream<Path> stream = Files.newDirectoryStream(path,"*.doc"))
 //java7:
 List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
 byte[] bytes = Files.readAllBytes(path);  
+
 //java8
 Files.lines(path, StandardCharsets.UTF_8).forEach(System.out.println);	//流式打开，内存占用小
+
 //java6--从jar包中读配置文件
-//getResourceAsStream入参中如果开头'/',则从jar包的根目录找起；否则以*.class文件所在的目录往下匹配文件
-//文件绝对路径(但不可读取)：String xx = TestClass.class.getResource("/config/activejs/xx.js").getPath();
+//getResourceAsStream入参中如果开头'/',则从classPath根目录(也即jar包根目录)找起；否则以*.class文件所在的目录往下匹配文件
+//Class.getClassLoader().getResource(String path)		//path不能以’/'开头时；path是从ClassPath根下获取；
+//文件绝对路径(但不可直接读取)：
+String xx = TestClass.class.getResource("/config/activejs/xx.js").getPath();
 InputStream in = TestClass.class.getResourceAsStream("/config/activejs/xx.js");
 BufferedReader br=new BufferedReader(new InputStreamReader(in));  
 String s="";  
