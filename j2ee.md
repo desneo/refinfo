@@ -9,7 +9,23 @@
 2、 Servlet必须部署在Java servlet容器才能使用。虽然很多开发者都使用Java Server Pages（JSP）和Java Server   
     Faces（JSF）等Servlet框架，但是这些技术都要在幕后通过Servlet容器把页面编译为Java Servlet。
 ```
-**第一个例子**  
+
+**servlet Filter**  
+```java
+//1) 对被访问的URL进行预处理，如记录日志、验证等公共逻辑
+//2) 过滤器链：若存在多个匹配给定URL模式的个过滤器，它们就会根据web.xml里的配置顺序被调用。
+//3) 包含相同URL模式的过滤器（filter）会在Servlet调用前被调用
+//4) 过滤器需实现javax.servlet.Filter, init()/destroy()被容器调用。 doFilter()实现处理逻辑，
+     调用chain.doFilter(request, response)往下执行
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+    {
+        System.out.println(request.getProtocol());
+        chain.doFilter(request, response);
+    }
+//5) WEB-INF/web.xml中配置servlet ， 详见示例1
+```
+
+**示例1**  
 ```
 //1) 必须继承HttpServlet，要么继承GenericServlet的普通Servle， 要么HttpServlet 的HTTP Servlet。
 //2) 重写doGet() 和 doPost() 方法,如果你向这个servlet发送一个HTTP GET请求，doGet()方法就会被调用。其它方法一般不需重写。
@@ -42,7 +58,7 @@ public class FirstServlet extends HttpServlet
     }
 }
 
-//web.xml中配置servlet
+//WEB-INF/web.xml中配置servlet
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
    <servlet>
@@ -53,6 +69,15 @@ public class FirstServlet extends HttpServlet
     <servlet-name>MyFirstServlet</servlet-name>
     <url-pattern>/MyFirstServlet</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+	<filter-name>LoggingFilter</filter-name>
+    	<filter-class>com.servlet.test.FirstFilter</filter-class>
+	</filter>
+  <filter-mapping>
+	<filter-name>LoggingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
 ```
 
