@@ -1,4 +1,59 @@
 
+
+
+# 49.Servlet
+```
+1、Servlet 是一些遵从Java Servlet API的Java类，这些Java类可以响应web请求。
+2、 Servlet必须部署在Java servlet容器才能使用。虽然很多开发者都使用Java Server Pages（JSP）和Java Server   
+    Faces（JSF）等Servlet框架，但是这些技术都要在幕后通过Servlet容器把页面编译为Java Servlet。
+3、
+```
+**第一个例子**  
+```
+//1) 必须继承HttpServlet，要么继承GenericServlet的普通Servle， 要么HttpServlet 的HTTP Servlet。
+//2) 重新 doGet() 和 doPost() 方法,如果你向这个servlet发送一个HTTP GET请求，doGet()方法就会被调用。其它方法一般不需重写。
+public class FirstServlet extends HttpServlet
+{
+    private static final long serialVersionUID = 1L;
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try
+        {
+            // Write some content
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>MyFirstServlet</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h2>Servlet MyFirstServlet at " + request.getContextPath() + "</h2>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+        finally
+        {
+            out.close();
+        }
+    }
+}
+
+//web.xml中配置servlet
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+   <servlet>
+    <servlet-name>MyFirstServlet</servlet-name>
+    <servlet-class>com.servlet.test.FirstServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyFirstServlet</servlet-name>
+    <url-pattern>/MyFirstServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
+```
+
+
 # 50. 其它
 # 50.1 Tomcat
 **配置**  
