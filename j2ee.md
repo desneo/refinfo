@@ -3,6 +3,7 @@
 # 50.1 Tomcat
 **配置**  
 ```
+1、端口号: conf/server.xml--> <Connectors -->
 ```
 
 **eclipse中发布项目**  
