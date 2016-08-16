@@ -1,7 +1,7 @@
 
 
 
-# 49.Servlet
+# 49. Servlet
 ```
 0、servlet生命周期： tomcat等容器将请求分解成 HttpServletRequest/HttpServletResponse --> 调用servlet.init()
     -->servlet.service() 调用doGet/doPost处理 --> servlet.destroy() 一般只需重写doGet/doPost即可
@@ -80,6 +80,49 @@ public class FirstServlet extends HttpServlet
   </filter-mapping>
 </web-app>
 ```
+
+**Servlet下载文件**  
+```java
+//Servlet提供一个相应类型(Content-Disposition)，并将文件流写入输出流
+protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+{
+final int BYTES = 1024;
+int length = 0;
+ServletOutputStream outStream = response.getOutputStream();
+ServletContext context = getServletConfig().getServletContext();
+
+response.setContentType("text/plain");
+String fileToDownload = "resources/files/dtfile.xds";
+response.setHeader("Content-Disposition", "attachment; filename=" + fileToDownload.split("/")[2]);
+
+InputStream in = context.getResourceAsStream("/" + fileToDownload);
+byte[] bbuf = new byte[BYTES];
+while ((in != null) && ((length = in.read(bbuf)) != -1))
+{
+    outStream.write(bbuf, 0, length);
+}
+outStream.flush();
+outStream.close();
+}
+```
+**其它**
+```java
+//forward转发请求到另一个Servlet
+RequestDispatcher rd = servletContext.getRequestDispatcher("/NextServlet");
+rd.forward(request, response);
+
+//重定向请求到另一个Servlet
+httpServletResponse.sendRedirect("/anotherURL");
+
+//Servlet读写
+CookieCookie cookie = new Cookie("sessionId","123456789");
+cookie.setHttpOnly(true);
+cookie.setMaxAge(-30);
+response.addCookie(cookie);	//写cookie
+Cookie[] cookies = request.getCookies();  //读cookie
+
+```
+
 
 
 # 50. 其它
