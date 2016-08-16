@@ -105,6 +105,64 @@ outStream.flush();
 outStream.close();
 }
 ```
+
+**上传文件**
+```javascript
+//参考地址: http://www.jianshu.com/p/46e6e03a0d53
+//页面,index.html
+<input id="upload" type="button" value="上传" />
+<script>
+	$("#upload").click(function(){
+		debugger;
+		var formData = new FormData();
+		formData.append('file', $('#file')[0].files[0]);
+		$.ajax({
+			url : '/servletexample/upload',
+			type : 'POST',
+			cache : false,
+			data : formData,
+			processData : false,
+			contentType : false
+		}).done(function(res) {
+			alert("上传成功");
+		}).fail(function(res) {
+		});
+	});
+</script>
+```
+```java
+//后台， Part表示一个上传文件，part.write()会将上传的文件写入到临时目录apache-tomcat-8.0.36\work\Catalina\localhost\servletexample
+//上传的文件需要自己复制保存到指定位置，临时文件会被清空
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+{
+	Collection<Part> parts = request.getParts();
+	System.out.println("parts num:" + parts.size());
+	Iterator<Part> temp = parts.iterator();
+	while (temp.hasNext())
+	{
+	    Part part = temp.next();
+	    System.out.println(part.getSubmittedFileName());
+	    part.write(part.getSubmittedFileName());
+	}
+}
+
+//web.xml , multipart-config必须配置在上传的servlet中
+<servlet>
+	<servlet-name>uploadfileServlet</servlet-name>
+	<servlet-class>com.servlet.test.UploadFileServlet</servlet-class>
+	<!-- 文件上传的配置 -->
+	<multipart-config>
+		<max-file-size>20848820</max-file-size>
+		<max-request-size>418018841</max-request-size>
+		<file-size-threshold>1048576</file-size-threshold>
+	</multipart-config>
+</servlet>
+<servlet-mapping>
+	<servlet-name>uploadfileServlet</servlet-name>
+	<url-pattern>/upload</url-pattern>
+</servlet-mapping>
+```
+
 **其它**
 ```java
 //forward转发请求到另一个Servlet
@@ -124,7 +182,7 @@ Cookie[] cookies = request.getCookies();  //读cookie
 
 **session**  
 ```java
-//如果没有则创建session
+//如果没有则创建session, 需要在向客户端发送任何文档内容之前调用 
 HttpSession session = request.getSession();
 setAttribute(String name, Object value) //使用指定的名称绑定一个对象到该 session 会话
 getAttribute(String name)	//返回在该 session 会话中具有指定名称的对象，如果没有指定名称的对象，则返回 null
