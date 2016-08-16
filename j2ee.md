@@ -4,6 +4,7 @@
 **配置**  
 ```
 1、端口号: conf/server.xml--> <Connectors -->
+2、根目录ROOT，将代码部署在根目录不用加项目名称，即127.0.0.1:8080默认打开的是webapps/ROOT中页面
 ```
 
 **eclipse中发布项目**  
