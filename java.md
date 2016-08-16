@@ -27,6 +27,8 @@ List-->Array: list.toArray();
 Array-->List: Arrays.asList(array);  
 Map-->Set: Set<String> mapValuesSet = new HashSet<String>(map.values()); 
 Map-->List: List<String> mapKeyList = new ArrayList<String>(map.keySet());
+String-->Array: char[] chars= xx.toCharArray();
+Array-->String: new String(chars)
 ```
 
 ##2.2 List
