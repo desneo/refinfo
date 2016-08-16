@@ -120,9 +120,27 @@ cookie.setHttpOnly(true);
 cookie.setMaxAge(-30);
 response.addCookie(cookie);	//写cookie
 Cookie[] cookies = request.getCookies();  //读cookie
-
 ```
 
+**session**  
+```java
+//如果没有则创建session
+HttpSession session = request.getSession();
+setAttribute(String name, Object value) //使用指定的名称绑定一个对象到该 session 会话
+getAttribute(String name)	//返回在该 session 会话中具有指定名称的对象，如果没有指定名称的对象，则返回 null
+removeAttribute(String name)	//从该 session 会话移除指定名称的对象。
+getAttributeNames()	//返回 String 对象的枚举，String 对象包含所有绑定到该 session 会话的对象的名称。
+long getCreationTime()	//该 session 会话被创建的时间
+String getId()	//返回一个包含分配给该 session 会话的唯一标识符的字符串。
+long getLastAccessedTime()	//最后一次发送与该 session 会话相关的请求的时间
+void invalidate()	//指示该 session 会话无效，并解除绑定到它上面的任何对象。
+boolean isNew()	//
+int getMaxInactiveInterval()	//返回Servlet容器在客户端访问时保持session会话打开的最大时间间隔，以秒为单位。
+   //在web.xml中配置session超时时间, 将覆盖 Tomcat 中默认的 30 分钟超时时间。
+  <session-config>
+    <session-timeout>15</session-timeout>
+  </session-config>
+```
 
 
 # 50. 其它
