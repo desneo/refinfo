@@ -34,3 +34,28 @@ foo();	//undefined
 $("#upload").click(function(){ //ToDo }）
 ```
 
+## 60.20 jquery上传文件
+```javascript
+//使用 FormData 对象添加字段方式, IE11支持
+<input id="upload" type="button" value="上传" />
+<script>
+	$("#upload").click(function(){
+		debugger;
+		var formData = new FormData();
+		formData.append('file', $('#file')[0].files[0]);
+		$.ajax({
+			url : '/servletexample/upload',
+			type : 'POST',
+			cache : false,
+			data : formData,
+			processData : false,
+			contentType : false
+		}).done(function(res) {
+			alert("上传成功");
+		}).fail(function(res) {
+		});
+	});
+</script>
+```
+
+
