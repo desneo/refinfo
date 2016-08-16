@@ -14,7 +14,7 @@
 2、window-->showview中添加server-->add a server
    双击server中tomcat-->配置页面-->server Locations选择中间一个(use Tomcat installation),deploy path改成webapps, 超时时间500s
    (如果无法修改，则删除tomcat所有项目，右键clean后打开)
-3、新建web项目(Dynamic web project),其中会有src源码目录和资源目录, tomcat-->add and remove添加即可
+3、新建web项目(Dynamic web project),其中会有src源码目录和资源目录,勾选新建web.xml, tomcat-->add and remove添加即可
 4、start server,即可发现项目已部署到 G:\program-my\apache-tomcat-8.0.36\webapps\tt 中, console日志也会有项目发布目录
 
 ```
