@@ -3,15 +3,18 @@
 
 # 49.Servlet
 ```
+0、servlet生命周期： tomcat等容器将请求分解成 HttpServletRequest/HttpServletResponse --> 调用servlet.init()
+    -->servlet.service() 调用doGet/doPost处理 --> servlet.destroy() 一般只需重写doGet/doPost即可
 1、Servlet 是一些遵从Java Servlet API的Java类，这些Java类可以响应web请求。
 2、 Servlet必须部署在Java servlet容器才能使用。虽然很多开发者都使用Java Server Pages（JSP）和Java Server   
     Faces（JSF）等Servlet框架，但是这些技术都要在幕后通过Servlet容器把页面编译为Java Servlet。
-3、
 ```
 **第一个例子**  
 ```
 //1) 必须继承HttpServlet，要么继承GenericServlet的普通Servle， 要么HttpServlet 的HTTP Servlet。
-//2) 重新 doGet() 和 doPost() 方法,如果你向这个servlet发送一个HTTP GET请求，doGet()方法就会被调用。其它方法一般不需重写。
+//2) 重写doGet() 和 doPost() 方法,如果你向这个servlet发送一个HTTP GET请求，doGet()方法就会被调用。其它方法一般不需重写。
+//3) 获取参数: String value1 = req.getParameter("param1");
+//4) 为了发送内容给客户端，从HttpServletResponse获取PrintWriter,任何写到这个对象的内容都会被写进outputstream里发到client。
 public class FirstServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
@@ -59,7 +62,7 @@ public class FirstServlet extends HttpServlet
 **配置**  
 ```
 1、端口号: conf/server.xml--> <Connectors -->
-2、根目录ROOT，将代码部署在根目录不用加项目名称，即127.0.0.1:8080默认打开的是webapps/ROOT中页面
+2、根目录ROOT，将代码部署在根目录访问时不用加项目名称，即127.0.0.1:8080默认打开的是webapps/ROOT中页面
 ```
 
 **eclipse中发布项目**  
