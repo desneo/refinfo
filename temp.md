@@ -141,6 +141,35 @@ targetFile.write(String text)
 targetFile.write(String text, String charset) 
 ````
 
+**java<-->groovy互相调用**  
+```groovy
+//groovy<--java
+	import java.sql.Date;
+	Date xx = new Date();
+
+//java<--groovy
+//Test.java
+	Test test = new Test();
+	String[] roots = new String[]{"files/"};	//指定groovy脚本加载目录
+	GroovyScriptEngine groovyScriptEngine = new GroovyScriptEngine(roots); //groovy引擎
+	Class scriptClass = groovyScriptEngine.loadScriptByName("exp.groovy");	//加載腳本
+	GroovyObject scriptInstance = (GroovyObject)scriptClass.newInstance();	//實例化腳本
+	//調用方法，傳入參數
+	Test ret = (Test)scriptInstance.invokeMethod("helloWithParam",new Object[]{test,100});
+	System.out.println(ret.getAge());
+//exp.groovy
+	def helloWithParam(person, age){
+		person.age = age;
+		return person;
+	}
+
+//groovy<--groovy
+	import com.test.SomeScript  	//引入script 
+	def s = new SomeScript() 	//实例化脚本
+	s.a = 2 	//操作元素
+	s.run() 	//运行脚本
+```
+
 
 **包**  
 ```
