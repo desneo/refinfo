@@ -22,6 +22,15 @@ req.on('error', (e) => {
 # 60. Groovy
 **基础**  
 ```groovy
+== 相当于java中的equals
+
+//安全引用操作符, 如果xx==null， 则后面不执行
+println xx?.yy;  
+
+//字符串求值， 或${x}
+def x = 1
+def doubleQuoteWithDollar = "I am $x dolloar" //输出I am 1 dolloar
+
 //定义变量
 xx = "asdasd"  //全局变量
 def str= "i am a person"  //类型不定
@@ -32,9 +41,6 @@ def  nonReturnTypeFunc(){  //函数返回值类型可指定类型，如String，
      [return] last_line;   //return可选， 最后一行代码的执行结果就是本函数的返回值
 }
 
-//字符串求值
-def x = 1
-def doubleQuoteWithDollar = "I am $x dolloar" //输出I am 1 dolloar
 
 //List
 def aList = [5,'string',true] //List由[]定义，其元素可以是任何对象
@@ -58,8 +64,65 @@ def aConfusedMap=[key1:"who am i?"] //aConfuseMap中的key1到底是"key1"还是
 targetFile.eachLine { //流式操作每一行
     String line ->  println line
 }
+
+//定义闭包
+def sayhello = {
+  name ->   //定义入参
+    println("name="+name);
+}
 ```
 
+**内置的集合操作**
+```
+each  //遍历集合，对每一项处理函数
+collect //手机每一项处理后的返回值，类似java8 lamdba中map
+inject  //集合分组
+findAll //找到所有匹配元素
+max   //集合中最大值
+min
+```
+
+**正则表达式**  
+```groovy
+~     创建匹配模式
+=~    创建一个匹配器
+==~   计算是否匹配
+
+```
+
+**操作xml**  
+```
+//创建xml
+import groovy.xml.*
+def st = new StringWriter()
+MarkupBuilder mb  = new MarkupBuilder(st);
+mb.feed{
+    entry(id:"1234567"){
+        title{
+         show(name:"1234","fdfsa")
+        }
+         link:"readf"
+    }
+}
+print st
+
+//解析xml
+//XmlParser 支持xml文档的GPath表达式，支持findAll、find的查找方式
+//XmlSlurper  类似XmlParser，懒加载方式
+//DOMCategory 用一些语法支持DOM的底层解析
+def xmlSource = new File('xmllocation')
+def slurper= new XmlSlurper().parse(xmlSource)
+println  result.person*.city    //result.person我们会得到多个节点，这时候使用列表操作符*.可以对多个节点收集信息并返回为一个集合
+println  result.person*.@name   //@--获取对应属性的值
+
+def result = xml.parse(new File("C:/Users/xiaonanzhi/Person.xml"))
+result.person.find{it->
+ if(it.@name == "xiao5"){
+ println it.link.@rel
+ }
+}
+
+```
 
 **[文件I/O操作](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html)**  
 ```groovy
