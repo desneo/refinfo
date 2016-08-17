@@ -54,14 +54,28 @@ def aConfusedMap=[key1:"who am i?"] //aConfuseMap中的key1到底是"key1"还是
 
 **闭包**
 ```
+//Groovy中，当函数的最后一个参数是闭包的话，可以省略圆括号。
+targetFile.eachLine { //流式操作每一行
+    String line ->  println line
+}
 ```
 
 
 **[文件I/O操作](http://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html)**  
 ```groovy
+//主要使用闭包操作
 def targetFile = new File(文件名) //创建file对象
+//读文件
 targetFile.getBytes()  //文件内容一次性读出，返回类型为byte[]
+List	readLines()   //行读取
+targetFile.eachLine { //流式操作每一行
+    String line ->  println line
+}
 
+//写文件
+targetFile.append(Object text, String charset)    //尾部追加，不存在则创建
+targetFile.write(String text)   
+targetFile.write(String text, String charset) 
 ````
 
 
