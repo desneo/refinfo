@@ -833,7 +833,7 @@ targetFile.write(String text, String charset)
 	}
 
 //groovy<--groovy
-	import com.test.SomeScript //引入script 
+	import com.test.SomeScript	//引入script 
 	def s = new SomeScript() 	//实例化脚本
 	s.a = 2 	//操作元素
 	s.run() 	//运行脚本
