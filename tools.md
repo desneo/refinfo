@@ -12,6 +12,7 @@ Ctrl+L  选择行，重复则增加选择下一行
 2、gbk，GBK编码兼容
 3、sidebarEnhancements -->左侧边栏Folders,View -> Side Bar, Project -> Add Folder to Project
 4、Bracket Highlighter：匹配括号
+5、ChineseLocalization 界面中文，切换语言，帮助(H)/Language/简体中文，繁体中文，日本语，English。
 ```
 **手动安装package Control**  
 ```
