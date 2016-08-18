@@ -1,3 +1,23 @@
+# sublime3
+**快捷键**  
+```
+```
+**插件**  
+```
+注： preference-->package control -->输入install
+1、Emmet
+2、gbk，GBK编码兼容
+3、sidebarEnhancements -->左侧边栏Folders,View -> Side Bar, Project -> Add Folder to Project
+4、Bracket Highlighter：匹配括号
+```
+**手动安装package Control**  
+```
+  1) [点击下载文件](https://sublime.wbond.net/Package%20Control.sublime-package)
+  2) sublime-->preference-->Browser Packages 会打开安装目录(如C:\Users\z00316474\AppData\Roaming\Sublime Text 3\Packages)
+  3) ../Installed Packages , 将1）中文件放入目录, 重启
+  4) 安装成功后，Preferences菜单最下边是否有Package Settings 和Package Control两个选项
+```
+
 # Markdown语法
 ```
 换行 --> 连续两个空格
