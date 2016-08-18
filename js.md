@@ -68,7 +68,7 @@ $("#upload").click(function(){ //ToDo }）
 ```javascript
 //ng-show ng-hide	ng-bind 	ng-disabled 	ng-readonly
 //ng-class
-	1) ng-class="{positive: $index==1 && values > 0, negative:values < 0 && $index==1 }
+	1) ng-class="{positive: $index==1 && values > 0, negative:values < 0 && $index==1 }"
 	2) ng-class="{true: 'active', false: 'inactive'}[isActive]"	//isActive==true时添加active
 //ng-href ng-src  当<img><a>绑定数据时，由于浏览器并行方式加载图片和其他内容，故angularjs没有机会拦截到数据绑定的请求!
 	<img ng-src="/images/{{favoriteCat}}">
