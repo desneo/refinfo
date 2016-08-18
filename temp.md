@@ -19,4 +19,10 @@ req.on('error', (e) => {
 
 
 
+**threadLocal**  
+```java
+1、用于线程集的全局变量(当前线程共享)，  private static ThreadLocal<Integer> seqNum = new ThreadLocal<Integer>() 
+    seqNum.set(1); seqNum.get(); 
+2、单的static是所有线程共享的全局变量
 
+```
