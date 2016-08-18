@@ -58,4 +58,27 @@ $("#upload").click(function(){ //ToDo }）
 </script>
 ```
 
+# 70. AngularJs
+**调试**  
+```
+//chrome	console中找到当前页frame --> $($0).scope().$Gadget.queryPhoneNumber
+//IE 	$(document).find('iframe')[5].contentWindow.$("#inputText_PhoneNumber").scope()
+```
+**指令**  
+```javascript
+//ng-show ng-hide	ng-bind 	ng-disabled 	ng-readonly
+//ng-class
+	1) ng-class="{positive: $index==1 && values > 0, negative:values < 0 && $index==1 }
+	2) ng-class="{true: 'active', false: 'inactive'}[isActive]"	//isActive==true时添加active
+//ng-href ng-src  当<img><a>绑定数据时，由于浏览器并行方式加载图片和其他内容，故angularjs没有机会拦截到数据绑定的请求!
+	<img ng-src="/images/{{favoriteCat}}">
+	<a ng-href="/shop/category={{numberOf}}"> some txt </a>
 
+```
+
+**事件**  
+```javascript
+//ng-click
+<input ng-change="computeNeeded()" ng-model="funding.startingEstimate" >
+//ng-keydown	ng-keyup	ng-change	ng-mousedown	ng-mouseenter	ng-mouseleave
+```
