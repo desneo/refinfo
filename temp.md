@@ -26,3 +26,17 @@ req.on('error', (e) => {
 2、单的static是所有线程共享的全局变量
 
 ```
+
+**groovy**  
+```
+//运行groovy脚本
+    String[] roots = new String[]{"files/"};    //指定groovy脚本加载目录
+    GroovyScriptEngine groovyScriptEngine = new GroovyScriptEngine(roots); //groovy引擎
+    Class scriptClass = groovyScriptEngine.loadScriptByName("exp.groovy");  //加載腳本
+    Binding binding = newBinding();   //脚本中变量入参
+    binding.setVariable("name", "zhousahjkshdkajs");  //设置变量值
+    Object output = groovyScriptEngine.run("hello.groovy", binding);
+//hello.groovy
+return "in param name is ${name}"
+
+```
