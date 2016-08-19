@@ -39,4 +39,5 @@ req.on('error', (e) => {
 //hello.groovy
 return "in param name is ${name}"
 
+//each --> ["Cat", "Dog", "Elephant"].each{yy-> println yy}
 ```
