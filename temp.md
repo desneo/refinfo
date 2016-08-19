@@ -40,4 +40,5 @@ req.on('error', (e) => {
 return "in param name is ${name}"
 
 //each --> ["Cat", "Dog", "Elephant"].each{yy-> println yy}  注：默认提供一个it变量
+      array.add(obj); 
 ```
