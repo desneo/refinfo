@@ -616,6 +616,13 @@ try{}catch(){} finally{//此处代码总会执行}
 2)将需要序列化的类实现Serializable接口就可以
 ```
 
+**threadLocal**  
+```java
+1、用于线程集的全局变量(当前线程共享)，  private static ThreadLocal<Integer> seqNum = new ThreadLocal<Integer>() 
+    seqNum.set(1); seqNum.get(); 
+2、单的static是所有线程共享的全局变量
+```
+
 # 21.Stream java8
 ```java
 //1) Stream对集合功能的增强。类似Iterator，可顺序/并行对原Stream进行过滤汇总 ，数据源可无限。
@@ -714,6 +721,7 @@ def  nonReturnTypeFunc(){  //函数返回值类型可指定类型，如String，
 //List
 def aList = [5,'string',true] //List由[]定义，其元素可以是任何对象
         //可以直接通过索引存取，而且不用担心索引越界。如果索引超过当前链表长度，List会自动往该索引添加元素
+array.add(obj); 
 println(aList[0..1])  //取前2个值
 println(aList[-1])  //倒数第一个值
 aList.size  ===>结果是101
@@ -743,7 +751,7 @@ def sayhello = {
 
 **内置的集合操作**
 ```
-each  //遍历集合，对每一项处理函数
+each  //["Cat", "Dog", "Elephant"].each{yy-> println yy}(默认提供一个it变量)	遍历集合，对每一项处理函数
 collect //手机每一项处理后的返回值，类似java8 lamdba中map
 inject  //集合分组
 findAll //找到所有匹配元素
@@ -833,10 +841,14 @@ targetFile.write(String text, String charset)
 	}
 
 //groovy<--groovy
-	import com.test.SomeScript	//引入script 
-	def s = new SomeScript() 	//实例化脚本
-	s.a = 2 	//操作元素
-	s.run() 	//运行脚本
+    String[] roots = new String[]{"files/"};    //指定groovy脚本加载目录
+    GroovyScriptEngine groovyScriptEngine = new GroovyScriptEngine(roots); //groovy引擎
+    Class scriptClass = groovyScriptEngine.loadScriptByName("exp.groovy");  //加載腳本
+    Binding binding = newBinding();   //脚本中变量入参
+    binding.setVariable("name", "zhousahjkshdkajs");  //设置变量值
+    Object output = groovyScriptEngine.run("hello.groovy", binding);
+//hello.groovy
+	return "in param name is ${name}"
 ```
 
 
