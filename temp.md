@@ -39,5 +39,5 @@ req.on('error', (e) => {
 //hello.groovy
 return "in param name is ${name}"
 
-//each --> ["Cat", "Dog", "Elephant"].each{yy-> println yy}
+//each --> ["Cat", "Dog", "Elephant"].each{yy-> println yy}  注：默认提供一个it变量
 ```
