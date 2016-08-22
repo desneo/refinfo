@@ -79,3 +79,11 @@ source $VIMRUNTIME/menu.vim
 "gvim解决consle输出乱码  
 language messages zh_CN.utf-8 
 ```
+
+
+# 其它  
+**安装新字体**  
+```
+方法a) 字体文件（*.ttf）直接拖进 C:\windows\fonts 目录中。
+方法b) 字体下载到硬盘，然后打开“控制面板”->字体 ->再点击菜单“文件”->安装新字体。
+```
