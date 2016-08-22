@@ -4,6 +4,12 @@
 Ctrl+P  project(见插件3)中检索文件，不需通配符*
 Ctrl+G  跳转指定行
 Ctrl+L  选择行，重复则增加选择下一行
+Ctrl+C  复制当前行
+Ctrl+X  删除当前行
+Ctrl+G  跳转指定行
+Ctrl+Shift+方向  交换上下行
+Ctrl+J  合并行
+
 ```
 **插件**  
 ```
@@ -20,6 +26,10 @@ Ctrl+L  选择行，重复则增加选择下一行
   2) sublime-->preference-->Browser Packages 会打开安装目录(如C:\Users\z00316474\AppData\Roaming\Sublime Text 3\Packages)
   3) ../Installed Packages , 将1）中文件放入目录, 重启
   4) 安装成功后，Preferences菜单最下边是否有Package Settings 和Package Control两个选项
+```
+**黑色背景下需调整鼠标**  
+```
+桌面-->右键-->性化-->改鼠标样式-->“自定义”框中选中“文本选择”-->浏览-->找到beam_r.cur 样式，使用即可！
 ```
 
 # Markdown语法
