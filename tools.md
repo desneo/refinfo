@@ -87,3 +87,10 @@ language messages zh_CN.utf-8
 方法a) 字体文件（*.ttf）直接拖进 C:\windows\fonts 目录中。
 方法b) 字体下载到硬盘，然后打开“控制面板”->字体 ->再点击菜单“文件”->安装新字体。
 ```
+
+**windows上关闭站口占用的程序**  
+```
+1) 查找占用端口的进程号， netstat -ano | findstr 80
+2) 进程号找到进程名，tasklist | findstr 2000
+3) 进程管理器中关闭进程即可
+```
