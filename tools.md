@@ -54,6 +54,9 @@ Ctrl+L  选择行，重复则增加选择下一行
     git commit -m '修改的注释'  	
     git push refinfo gh-pages	//本地仓库推送到指定分支  
 5、更新： git pull
+6、删除文件: git rm [-r] *    //若是删除目录需 -r
+7、重命名： git mv helloworld.c helloworld1.c
+8、强制覆盖： git push -f   //强覆盖方式用你本地的代码替代git仓库内的内容
 ```
 
 #vim/gvim（安装目录下vimrc）
