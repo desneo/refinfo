@@ -22,16 +22,6 @@ req.on('error', (e) => {
 
 **groovy**  
 ```
-//运行groovy脚本
-    String[] roots = new String[]{"files/"};    //指定groovy脚本加载目录
-    GroovyScriptEngine groovyScriptEngine = new GroovyScriptEngine(roots); //groovy引擎
-    Class scriptClass = groovyScriptEngine.loadScriptByName("exp.groovy");  //加載腳本
-    Binding binding = newBinding();   //脚本中变量入参
-    binding.setVariable("name", "zhousahjkshdkajs");  //设置变量值
-    Object output = groovyScriptEngine.run("hello.groovy", binding);
-//hello.groovy
-return "in param name is ${name}"
-
-//each --> ["Cat", "Dog", "Elephant"].each{yy-> println yy}  注：默认提供一个it变量
-      array.add(obj); 
+//数组 def xx = []; xx +="name"
+//对象 def xx= {}; xx.name="asdasd"
 ```
