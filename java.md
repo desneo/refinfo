@@ -936,18 +936,39 @@ eclispe各种视图 -->Window-->Showview-->Other
 **安装**
 ```
 注：下载后解压即可(先安装jdk), 升级下载最新包，修改M2_HOME值即可
-1.在“系统变量”中增加一个变量，名 M2_HOME , 值 H:\program\apache-maven-3.2.3 （Maven的安装路径）。 
-2.在“ 系统变量”Path中末尾加 %M2_HOME%\bin;	
-
-配置完成，以下两条指令可执行成功：
+1.“系统变量”中增加变量 M2_HOME , 值 H:\program\apache-maven-3.2.3 （Maven的安装路径）。 
+2.“ 系统变量”Path中末尾加 %M2_HOME%\bin;	
+//测试安装成功
 echo %M2_HOME%		//变量是否指向了正确的安装目录
 mvn  -v			//能否正确找到mvn的执行脚本
-```
 
-**IDE中配置maven**
-```
+//IDE中配置maven
 window-->preference-->搜索maven-->Installations-->add
 ```
+
+**基础问题** 
+```
+1、pom.xml总是在项目的根目录。
+2、约定优于配置：
+		源码目录为 src/main/java
+		编译输出目录为 target/classes/
+		打包方式默认为jar(如果不指定packaging标签的话)
+		包输出目录为target
+3、maven中通过groupId、artifactId、version定位到一个唯一jar、pom、car。
+``` 
+
+**pom.xml解析**  
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>	//当前pom模型的版本，3.0必须是4.0.0
+  <groupId>com.huawei</groupId>		//必须，项目属于哪个组，一般值项目关联的组织/公司
+  <artifactId>ttt</artifactId>		//必须，项目在组中唯一的id
+  <version>0.0.1-SNAPSHOT</version>	//必须，项目当前版本(snapchat-快照，开发中非稳定版本)
+  <packaging>war</packaging>	//可选，打包方式，默认jar
+  <name>Maven hello project</name>	//可选，对用户更友好的项目名称
+</project>
+```
+
 
 **maven原理**
 ```
