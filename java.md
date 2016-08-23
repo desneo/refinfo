@@ -712,6 +712,9 @@ xx = "asdasd"  //全局变量
 def str= "i am a person"  //类型不定
 String str = "12312"    //若指定类型，则变量类型不可修改
 
+//对象
+def xx= {}; xx.name="asdasd"
+
 //定义函数
 def  nonReturnTypeFunc(){  //函数返回值类型可指定类型，如String，如果不return string则报错
      [return] last_line;   //return可选， 最后一行代码的执行结果就是本函数的返回值
@@ -722,6 +725,7 @@ def  nonReturnTypeFunc(){  //函数返回值类型可指定类型，如String，
 def aList = [5,'string',true] //List由[]定义，其元素可以是任何对象
         //可以直接通过索引存取，而且不用担心索引越界。如果索引超过当前链表长度，List会自动往该索引添加元素
 array.add(obj); 
+def xx = []; xx +="name"
 println(aList[0..1])  //取前2个值
 println(aList[-1])  //倒数第一个值
 aList.size  ===>结果是101
@@ -914,6 +918,8 @@ eclispe各种视图 -->Window-->Showview-->Other
 	代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
 	package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
 	关键字颜色：[方案2](http://blog.csdn.net/etjnety/article/details/7846703/)  
+4) 设置tab键为4个空格
+	window->preference->General->Editors->Text Editors,选中右侧的 insert space for tabs;
 ```
 
 **远程debug**
