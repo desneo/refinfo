@@ -914,10 +914,8 @@ eclispe各种视图 -->Window-->Showview-->Other
 1)[关闭变量名后自动补全类型字符](http://www.itnose.net/detail/6143864.html)  
 2)Ctrl+S时自动格式化代码，删除unuse的包:  
 	windows->preference->java/Editor/Save action->勾选Format source Code, Organize import  
-3)背景颜色  
-	代码区: Window->Preferences->General->Editors->Text Editors->Backgroud colors->85/123/205  
-	package区域：修改windows主题，桌面->右键，个性化->窗口颜色->窗口->85/123/205  
-	关键字颜色：[方案2](http://blog.csdn.net/etjnety/article/details/7846703/)  
+3)设置默认编码 
+	Window->Preferences->General->Workspace->Text file encoding 选择UTF-8  
 4) 设置tab键为4个空格
 	window->preference->General->Editors->Text Editors,选中右侧的 insert space for tabs;
 ```
@@ -961,7 +959,6 @@ window-->preference-->搜索maven-->Installations-->add
 	mvn clean test
 	mvn clean package   //打包（成jar后war）
 	mvn clean install   //将工程打出的包安装到本地仓库
-
 ``` 
 
 **pom.xml解析**  
@@ -986,7 +983,6 @@ window-->preference-->搜索maven-->Installations-->add
   </dependencies>  
 </project>
 ```
-
 
 **其它**  
 ```
