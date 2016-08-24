@@ -7,7 +7,7 @@
 		编译输出目录为 target/classes/
 		打包方式默认为jar(如果不指定packaging标签的话)
 		包输出目录为target
-3、maven中通过groupId、artifactId、version定位到一个唯一jar、pom、car（packaging标签，默认jar）。
+3、maven中通过groupId、artifactId、version定位到一个唯一jar、pom、car。
 ``` 
 
 **pom.xml解析**  
@@ -19,6 +19,17 @@
   <version>0.0.1-SNAPSHOT</version>	//必须，项目当前版本(snapchat-快照，开发中非稳定版本)
   <packaging>war</packaging>	//可选，打包方式，默认jar
   <name>Maven hello project</name>	//可选，对用户更友好的项目名称
+  
+  <dependencies>  
+	<dependency>  
+	    <groupId>org.springframework</groupId>  //必选
+	    <artifactId>spring-core</artifactId>  //必选
+	    <version>${springframework.version}</version	//必选  
+	    <type>jar</type>   //可选，依赖类型，默认jar
+	    //可选，依赖范围，默认compile-编译/测试/运行都需要；test-只测试需要；provided-编译测试；runtime-运行
+	    <scope>compile</scope>  
+	</dependency>  
+  </dependencies>  
 </project>
 ```
 
