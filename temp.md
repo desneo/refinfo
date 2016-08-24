@@ -8,6 +8,13 @@
 		打包方式默认为jar(如果不指定packaging标签的话)
 		包输出目录为target
 3、maven中通过groupId、artifactId、version定位到一个唯一jar、pom、car。
+10、创建maven project：new project-->maven project --> 勾选"Create a simple project" 不使用骨架
+11、[创建webapp项目](http://jingyan.baidu.com/article/9f63fb91a7d2a5c8400f0e20.html)：
+	先创建一个普通的maven project（package选war），src/main下面会生成webapp目录--> 工程 properties-->project facets -->java选中1.8
+	-->Danamic web module取消，apply， 再勾选apply-->生成webContent目录-->将其下的MEATA_INF和WEB_INF复制到src/main/webapp下
+	-->删掉webcontent-->
+	修改发布规则-->工程 右键 properties --> Deployment Assembly -->测试目录不需发布可以去掉
+					   --> 指定web路径-->add-->folder-->选中webapp目录
 ``` 
 
 **pom.xml解析**  
