@@ -1,3 +1,10 @@
+**eclispe**
+```
+设置tab键为4个空格
+window->preference->General->Editors->Text Editors,选中右侧的 insert space for tabs;
+```
+
+
 
 **groovy**  
 ```
