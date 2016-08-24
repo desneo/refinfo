@@ -953,6 +953,7 @@ window-->preference-->搜索maven-->Installations-->add
 		打包方式默认为jar(如果不指定packaging标签的话)
 		包输出目录为target
 3、maven中通过groupId、artifactId、version定位到一个唯一jar、pom、car。
+4、Maven所需构件都是直接从本地仓库获取的。如果本地没有，会尝试从远程仓库下载构件至本地仓库，然后再使用本地仓库的构件。
 5、maven指令
 	//test前会自动compile，package前会自动test，install前会自动package
 	mvn clean compile   //编译
@@ -984,6 +985,49 @@ window-->preference-->搜索maven-->Installations-->add
 </project>
 ```
 
+**坐标和依赖**
+```
+//传递性依赖
+   例子：项目有Spring-aop:4.1.1.RELEASE的依赖，而Spring-aop也有自己的依赖（maven仓库中的pom.xml），maven会自动解析依赖获得依赖的包。
+//依赖冲突的处理
+   如果项目A有这样的依赖关系：A->B->C->X(1.0)、A->D->X(2.0), 这样依赖路径上有两个版本的X。原则如下：
+   1.路径最近者优先。如上1.0的路径长度是3，2.0的长度是2，则2.0的X会被使用。
+   2.路径长度相同时，第一声明者优先。即在pom.xml中使用先声明的那个。
+//排除依赖
+
+查看依赖信息
+   mvn dependency:tree 优先 --> 解析成依赖树，可以看出某个依赖是从哪个路径引入的。
+   mvn dependency:list 	--> 解析并显示依赖列表。 列出所有依赖的文件。
+```
+
+**仓库**  
+```
+//仓库搜索服务 --> http://search.maven.org/
+//超级pom,中央仓库
+	${M2_HOME}/lib/maven-model-builder-3.0.4.jar --> \org\apache\maven\model\pom-4.0.0.xml, 所有Maven POM的父POM
+//本地仓库（可从maven中复制一份到此处修改，不要修改全局的settings.xml）
+	~/.m2/settings.xml --> localRepository标签指定本地仓库地址
+//远程仓库（私服是一种特殊的远程仓库）可多个，pom.xml配置-单工程有效，settings.xml全部有效
+	  <repositories>  
+		<repository>  
+		  <id>cloudhopper</id>  
+		  <name>Repository for Cloudhopper</name>  
+		  <url>http://maven.cloudhopper.com/repos/third-party/</url>  //仓库地址，http协议
+		  <releases>       
+			<enabled>true</enabled>   //开启发布版本支持    
+		  </releases>       
+		  <snapshots>       
+			<enabled>false</enabled>  //不会下载快照版本
+		  </snapshots>  
+		</repository>  
+	  </repositories>  
+
+//快照版本-snapchat，总是更新到最新版本
+//镜像--一般用于代替中央仓库提供服务
+
+//仓库搜索服务
+```
+
 **其它**  
 ```
 10、创建maven project：new project-->maven project --> 勾选"Create a simple project" 不使用骨架
@@ -993,18 +1037,4 @@ window-->preference-->搜索maven-->Installations-->add
 	-->删掉webcontent-->
 	修改发布规则-->工程 右键 properties --> Deployment Assembly -->测试目录不需发布可以去掉
 					   --> 指定web路径-->add-->folder-->选中webapp目录
-```
-
-**maven原理**
-```
-//传递性依赖
-   例子：项目有一个Spring-aop:4.1.1.RELEASE的依赖，而实际上Spring-aop也有自己的依赖（maven仓库中的pom.xml），maven自动解析依赖获得依赖的包。
-//依赖冲突的处理
-   如果项目A有这样的依赖关系：A->B->C->X(1.0)、A->D->X(2.0), 这样依赖路径上有两个版本的X。原则如下：
-   1.路径最近者优先。如上1.0的路径长度是3，2.0的长度是2，则2.0的X会被使用。
-   2.路径长度相同时，第一声明者优先。即在pom.xml中使用先声明的那个。
-
-查看依赖信息
-   mvn dependency:tree 优先 --> 解析成依赖树，可以看出某个依赖是从哪个路径引入的。
-   mvn dependency:list 	--> 解析并显示依赖列表。 列出所有依赖的文件。
 ```
