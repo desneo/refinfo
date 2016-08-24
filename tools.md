@@ -100,6 +100,12 @@ language messages zh_CN.utf-8
 
 
 # 其它  
+**设置系统环境变量**
+```
+SETX PATH C:\ /M   //新增修改系统环境变量(/M-修改到系统环境变量)
+SETX PATH "%PATH%;C:\\" /M  //某个系统变量中追加
+```
+
 **安装新字体**  
 ```
 方法a) 字体文件（*.ttf）直接拖进 C:\windows\fonts 目录中。
