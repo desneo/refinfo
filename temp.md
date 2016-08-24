@@ -24,6 +24,7 @@
 
 **maven指令**
 ```
+//test前会自动compile，package前会自动test，install前会自动package
 mvn clean compile   //编译
 mvn clean test
 mvn clean package   //打包（成jar后war）
