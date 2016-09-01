@@ -20,6 +20,7 @@ Ctrl+J  合并行
 4、Bracket Highlighter：匹配括号提示
 5、ChineseLocalization 界面中文，切换语言，帮助(H)/Language/简体中文，繁体中文，日本语，English。
 6、TrailingSpaces 尾部空格标注
+7、Html Beautify
 ```
 **手动安装package Control**  
 ```
